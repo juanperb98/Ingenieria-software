@@ -1,2 +1,0 @@
-# Ramas
-[](img/branching.gif)
