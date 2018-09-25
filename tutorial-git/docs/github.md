@@ -97,3 +97,57 @@ Para **obtener los cambios** realizados por nosotros (u otras personas) en el re
 Haciendo referencia de nuevo a _master_ como la rama en la que queremos obtener los cambios.
 
 **Debemos tener en cuenta que antes de realizar cualquier _git push_ es recomendable hacer un _git pull_ para evitar posibles errores a la hora de subir los cambios al repositorio remoto**
+
+## Trabajando con ramas remotas
+
+Las ramas (de lo cual se ha hablado con anterioridad), es un elemento de _git_ que puede ser trasladado a _Github_ sin ningún problema. Esto permite a los usuarios trabajar en remoto sin problema alguno. Podemos ver las ramas remotas de nuestro repositorio con:
+
+```
+  git branch -r
+```
+
+### Operaciones con ramas remotas
+
+Las mismas operaciones (crear,modificar,eliminar) que podíamos hacer con las ramas locales podrémos hacerlas con las remotas sin nigún tipo de problema, simplemente tendrémos que haber creado las ramas remotas previamente y aplicar los diferentes cambios que hagamos en local.
+
+#### Crear y modficiar ramas remota
+Para crear una rama remota, tenemos que seguir los siguientes pasos:
+
+1. Crear una rama en local
+ * _git branch nueva rama_
+2. Modificar la rama local
+3. Hacer commit
+4. Crear la rama remota
+  * _git push origin rama1_
+
+
+De nuevo hacemos referencia a _origin_ como la rama remota y _rama1_ como la *rama* local en la que estamos trabajando y queremos sincronizar con el repositorio remoto
+
+Si llevamos cierto tiempo trabajando con una rama en nuestro repositorio local, podemos copiar dicha rama al repositorio remoto usando:
+
+```
+  git checkout -b rama_local rama_remota
+```
+#### Eliminar ramas remotas
+Al igual podemos eliminar una rama del repositorio remoto:
+
+```
+  git push origin --delete rama_remota
+```
+#### Obtener datos de ramas remotas
+
+Una vez que tenemos contenido en ramas locales,sería de utilidad poder traerlo a nuestro repositorio local de forma que podamos explorar y probar las nuevas funcionalidades implementadas por cualquier compañero (como ejemplo personal). Para poder obtener *todos los cambios remotos* utilizamos el comando:
+```
+git fetch
+```
+Si estamos trabajando en una rama local y queremos fusionarla con las ramas remotas tendrémos que usar el comando
+```
+  git merge origin/master
+```
+De forma que estamos sincronizando completamente nuestr rama local _master_ con nuestra rama remota (_master en el repositorio remoto_), en el caso de que tengamos problemas de sincronización Github tiene los denominados _pull merge requests_ que quedarán registrados como un commit cuando un usuario decide fusionar su rama local con la remota.
+
+Cuando queremos obtener los cambios *en la rama en la que estamos trabajando* simplemente tenemos que recurrir al comando visto con anterioridad:
+
+```
+  git pull
+```
