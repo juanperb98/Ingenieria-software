@@ -1,0 +1,4 @@
+site_name: Introducción git
+theme:
+        name: 'material'
+# nav:
