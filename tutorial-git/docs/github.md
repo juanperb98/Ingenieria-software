@@ -10,7 +10,7 @@ Debemos tener clara la anterior afirmación, puesto que Github simplemente es un
 
 Antes de continuar será neceseario obtener nuestra cuenta de [Github](https://www.github.com) 
 
-<center> <img src="img/github.gif"> </center>
+<p align="center"><img src="/img/github.gif"></p>
 
 ## Sincronización de Github y Git
 
@@ -33,4 +33,4 @@ Si queremos configurar nuestra clave ssh dentro del repositorio de Github, neces
 
 De forma que por defecto (aunque podemos cambiarlo dentro del asistente de generación) se guardarán los archivos __id_rsa__ y __id_rsa.pub__ dentro de la carpeta __~/.ssh__ de nuestro usuario, puediendo así copiar el contenido del **último archivo** a la configuración de nuestro perfil de Github:
 
-<center> <img src="img/github-keys.png"> </center>
+<p align="center"><img src="/img/github-keys.png"> </p>
