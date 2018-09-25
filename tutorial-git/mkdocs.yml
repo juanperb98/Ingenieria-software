@@ -1,4 +1,9 @@
 site_name: Introducción git
+markdown_extensions:
+  - admonition
 theme:
         name: 'material'
-# nav:
+nav:
+  # - 'indice.md'
+  # - 'github.md'
+  # - 'ramas.md'
