@@ -10,7 +10,7 @@ Debemos tener clara la anterior afirmación, puesto que Github simplemente es un
 
 Antes de continuar será neceseario obtener nuestra cuenta de [Github](https://www.github.com)
 
-<p align="center"><img src="/img/github.gif"></p>
+<p align="center"><img src="img/github.gif"></p>
 
 ## Sincronización de Github y Git
 
@@ -38,9 +38,7 @@ Si queremos configurar nuestra clave ssh dentro del repositorio de Github, neces
 
 De forma que por defecto (aunque podemos cambiarlo dentro del asistente de generación) se guardarán los archivos __id_rsa__ y __id_rsa.pub__ dentro de la carpeta __~/.ssh__ de nuestro usuario, puediendo así copiar el contenido del **último archivo** a la configuración de nuestro perfil de Github:
 
-<<<<<<< HEAD
-<center> <img src="img/github-keys.png"> </center>
-
+<p align="center"><img src="img/github-keys.png"> </p>
 
 ## Convertir un repositorio en remoto
 
@@ -79,6 +77,7 @@ Si queremos eliminar cualquier repositorio remoto de nuestro repositorio local s
 ```
   git remote rm origin
 ```
+<p align="center"><img src="img/remote-repo.jpeg"/></p>
 
 ## Obteniendo y aplicando datos en un repositorio remoto
 
@@ -152,6 +151,12 @@ Cuando queremos obtener los cambios *en la rama en la que estamos trabajando* si
 ```
   git pull
 ```
-=======
-<p align="center"><img src="/img/github-keys.png"> </p>
->>>>>>> master
+
+
+## Trabajo dinámico con repositorio remotos
+
+<p align="center"><img src="img/clone-fork.png"/></p>
+
+Cuando estamos explorando repositorios remotos, podemos encontrar algún proyecto que te guste modificar o un trabajo que quieras comprobar como funciona. En este caso Github implementa lo denomidado _fork_ que consiste en el clonado de un repositorio remoto (creado por otra persona) a un repositorio remoto (creado por nosotros) de forma que podamos modificar libremente **una copia exacta del repositorio ajeno**
+
+Una vez que hemos copiado el remoto ajeno a uno personal podemos trabajar libremente como mencionamos anteriormente.
