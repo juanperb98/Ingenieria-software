@@ -10,7 +10,7 @@ Debemos tener clara la anterior afirmación, puesto que Github simplemente es un
 
 Antes de continuar será neceseario obtener nuestra cuenta de [Github](https://www.github.com)
 
-<p align="center"><img src="/img/github.gif"></p>
+<p align="center"><img src="img/github.gif"></p>
 
 ## Sincronización de Github y Git
 
