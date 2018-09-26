@@ -38,7 +38,7 @@ Si queremos configurar nuestra clave ssh dentro del repositorio de Github, neces
 
 De forma que por defecto (aunque podemos cambiarlo dentro del asistente de generación) se guardarán los archivos __id_rsa__ y __id_rsa.pub__ dentro de la carpeta __~/.ssh__ de nuestro usuario, puediendo así copiar el contenido del **último archivo** a la configuración de nuestro perfil de Github:
 
-<p align="center"><img src="/img/github-keys.png"> </p>
+<p align="center"><img src="img/github-keys.png"> </p>
 
 ## Convertir un repositorio en remoto
 
