@@ -2,6 +2,8 @@
 
 - example (assiged to) [status]
 - uso basico (juanpe) (doing)
-- Introduccion, Instalacion,  y configuracion (diego) (on hold)
-- ramas (diego) (doing)
+- Introduccion (diego) (doing)
+- Instalacion (diego) (done)
+- ramas (diego) (done)
 - Github (Hector) (doing)
+- configuracion (hector) (done)
