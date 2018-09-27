@@ -4,6 +4,9 @@ markdown_extensions:
 theme:
         name: 'material'
 nav:
-  # - 'indice.md'
-  # - 'github.md'
-  # - 'ramas.md'
+  - 'index.md'
+  - 'instalacion.md'
+  - 'configuracion_git.md'
+  - 'github.md'
+  - 'usobasico.md'
+  - 'ramas.md'
