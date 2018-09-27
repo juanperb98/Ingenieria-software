@@ -1,13 +1,13 @@
 FROM python:2.7-slim
 
-COPY . /app
+COPY ./requirements.txt /tmp
 
-WORKDIR /app
+WORKDIR /tmp
 
 RUN pip install --trusted-host pypi.python.org -r requirements.txt
 
+WORKDIR /app
+
 EXPOSE 8000
-EXPOSE 80
-EXPOSE 8080
 
 CMD ["python","-m","mkdocs","serve"]
