@@ -5,5 +5,5 @@
 - Introduccion (diego) (done)
 - Instalacion (diego) (done)
 - ramas (diego) (done)
-- Github (Hector) (doing)
+- Github (Hector) (done)
 - configuracion (hector) (done)
