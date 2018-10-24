@@ -12,7 +12,7 @@ Los profesores requieren almacenar los siguientes datos dentro de la aplicación
   * Curso más alto en que esta matriculado.
   * Fecha de nacimiento.
   * Curso al que pertenece.
-  * Indicar si es miebro del grupo al que pertence.
+  * Indicar si es miembro del grupo al que pertence.
 
 ## Requisitos funcionales
 
@@ -21,7 +21,7 @@ Los profesores requieren almacenar los siguientes datos dentro de la aplicación
     ..* Modificar los datos de un alumno
     ..* Eliminar a un alumno
   * El sistema tiene que  poder mostrar información sobre un usuario en concreto por pantalla.
-  * El sisema tiene que poder  mostrar a todos los miembros de un grupo.
+  * El sistema tiene que poder  mostrar a todos los miembros de un grupo.
   * El sistema tiene que implementar copias de seguridad.
   * El sistema tiene que poder almacenar la información de los alumnos en formato markdown o html.
   * Los alumnos tienen que estar ordenados(tanto ascendente como descendentemente) por:
@@ -40,6 +40,7 @@ Los profesores requieren almacenar los siguientes datos dentro de la aplicación
   * El sistema tiene que estar en idioma español.
   * El sistema será diseñado para funcionar en sistemas Linux.
   * El sistema constará con una interfaz de consola.
+  * El sistema tiene que estar codificado en C++
 
 ## Prioridad de los requisitos
   El sistema de prioridades de nuestros requisitos sigue el siguiente orden:
@@ -51,9 +52,8 @@ Los profesores requieren almacenar los siguientes datos dentro de la aplicación
     5. Sistema de copias de seguridad.
     6. Exportar información de alumnos.
 
-La elección de este orden de prioridades se considera el más adecuado puesto que la primera acción que tenemos que realizar para poder trabjar con el sistema será introducir alumnos con los que operar (de lo contrario estaremos trabajando sin datos).
-Una vez que tenemos la función de introducir alumnos se considera necesario poder buscar dichos alumnos para consultar su información y comprar que ha sido introducida correctamente.
-Cuando podamos crear usuarios y buscarlos se contemplan las acciones de *modificar datos de usuarios y eliminar dichos usuarios*. Con esto se pretende poder trabajar con los alumnos previamente introducidos.
+La elección de este orden de prioridades se considera el más adecuado puesto que la primera acción que tenemos que realizar para poder trabjar con el sistema será *introducir alumnos con los que operar* (de lo contrario estaremos trabajando sin datos).
+Una vez que tenemos la función de introducir alumnos se considera necesario poder búscar dichos alumnos para consultar su información y comprobar que ha sido introducida correctamente, pasaremos a *modificar datos de usuarios(pudiendo agregar así líderes de grupos)* implementando también la opción de *eliminar usuarios* . Con esto se pretende poder trabajar con los alumnos previamente introducidos.
 
 Una vez que todo el trabajo con los alumnos este finalizado, se considera necesario implementar el *sistema de copias de seguridad* con un doble objetivo:
 
