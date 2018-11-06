@@ -76,15 +76,19 @@ alumno:
 		- búsqueda.
 
 ## exportar información de alumno
-	- quiero poder exportar los datos de un alumno o serie de alumnos para su posterior consulta.
+	- como profesor quiero poder exportar los datos de un alumno o serie de alumnos para su posterior consulta.
 ### reverso
 	- la información será guardada en markdown o html y mostrada en el navegador
 	- depende de: búsqueda de alumno
 
 
-## importar/exportar copias de seguridad
-	- quiero poder realizar y cargar copias de seguridad de los alumnos del sistema
+## exportar copias de seguridad
+	- como coordinador quiero poder realizar copias de seguridad de los alumnos del sistema
 ### reverso
 	- las copias de seguridad serán guardadas con un nombre identificador de la fecha en la que se realizó
 
-  
+
+## importar copias de seguridad
+	- como coordinador quiero poder realizar y cargar copias de seguridad de los alumnos del sistema
+### reverso
+	- las copias de seguridad serán cargadas sobreescribiendo datos actuales.

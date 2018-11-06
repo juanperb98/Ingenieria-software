@@ -1,0 +1,1 @@
+correción de la planificacion porque git es una herramienta muy buena.
