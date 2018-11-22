@@ -12,4 +12,4 @@ Estas clases solo constan de variables y sus respercitos geters y seters con su 
 
 ## Clase "Clase"
 
-Esta cuenta con una lista de alumnos y sus funciones CRUD correspondientes, a demas de los cargadores y creadores de fichero.
+Esta cuenta con una lista de alumnos y sus funciones CRUD correspondientes, ademas de los cargadores y creadores de fichero.
