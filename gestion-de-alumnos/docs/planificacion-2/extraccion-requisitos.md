@@ -13,7 +13,7 @@ Los profesores requieren almacenar los siguientes datos dentro de la aplicación
   * Curso más alto en que esta matriculado.
   * Fecha de nacimiento.
   * Curso al que pertenece.
-  * Indicar si es miembro del grupo al que pertence.
+  * Indicar si es lider del grupo al que pertence.
 
 ## Requisitos funcionales
 
