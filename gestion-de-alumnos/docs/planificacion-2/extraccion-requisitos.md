@@ -7,6 +7,7 @@ Los profesores requieren almacenar los siguientes datos dentro de la aplicación
 
   * DNI.
   * Nombre y apellidos.
+  * Correo electrónico.
   * Teléfono.
   * Dirección postal.
   * Curso más alto en que esta matriculado.
