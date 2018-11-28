@@ -43,16 +43,16 @@ TEST(Student, Seters){
 	time_t date = time(nullptr);
 	Student student;
 	
-	student.setId("123");
-	student.setName("pepe");
-	student.setLastName("perez");
-	student.setPhone(689111111);
-	student.setEmail("pepe@uco.es");
-	student.setAddress("calle de pepe");
-	student.setHighestCourse(3);
-	student.setGroupNumber(4);
-	student.setBirthAt(date);
-	student.setIsLeader(true);
+	EXPECT_EQ(SUCCESS,student.setId("123"));
+	EXPECT_EQ(SUCCESS,student.setName("pepe"));
+	EXPECT_EQ(SUCCESS,student.setLastName("perez"));
+	EXPECT_EQ(SUCCESS,student.setPhone(689111111));
+	EXPECT_EQ(SUCCESS,student.setEmail("pepe@uco.es"));
+	EXPECT_EQ(SUCCESS,student.setAddress("calle de pepe"));
+	EXPECT_EQ(SUCCESS,student.setHighestCourse(3));
+	EXPECT_EQ(SUCCESS,student.setGroupNumber(4));
+	EXPECT_EQ(SUCCESS,student.setBirthAt(date));
+	EXPECT_EQ(SUCCESS,student.setIsLeader(true));
 	
 	EXPECT_EQ(student.getId(),"123");
 	EXPECT_EQ(student.getName(),"pepe");
@@ -64,4 +64,25 @@ TEST(Student, Seters){
 	EXPECT_EQ(student.getIsLeader(),true);
 	EXPECT_EQ(student.getGroupNumber(),4);
 	EXPECT_EQ(student.getHighestCourse(),3);
+}
+
+TEST(Student, Faulty_Seters){
+	Student student;
+	
+	EXPECT_EQ(STUDENT_INVALID_PHONE,student.setPhone(68911111));
+	EXPECT_EQ(STUDENT_INVALID_PHONE,student.setPhone(1));
+	EXPECT_EQ(STUDENT_INVALID_PHONE,student.setPhone(-1));
+	EXPECT_EQ(STUDENT_INVALID_PHONE,student.setPhone(99999999));
+	EXPECT_EQ(STUDENT_INVALID_EMAIL,student.setEmail("pepe@.es"));
+	EXPECT_EQ(STUDENT_INVALID_EMAIL,student.setEmail("pepe@uco."));
+	EXPECT_EQ(STUDENT_INVALID_EMAIL,student.setEmail("pepe@."));
+	EXPECT_EQ(STUDENT_INVALID_EMAIL,student.setEmail("pepe"));
+	EXPECT_EQ(STUDENT_INVALID_EMAIL,student.setEmail("pepe@"));
+	EXPECT_EQ(STUDENT_INVALID_EMAIL,student.setEmail("@uco.es"));
+	EXPECT_EQ(STUDENT_INVALID_EMAIL,student.setEmail("uco.es"));
+	EXPECT_EQ(STUDENT_INVALID_DATE,student.setBirthAt(-1));
+	
+	EXPECT_EQ(student.getPhone(),0);
+	// EXPECT_EQ(student.getEmail(),"");
+	EXPECT_EQ(student.getBirthAtUnix(),0);
 }

@@ -13,54 +13,61 @@
 #include "Student.hpp"
 
 
-Student& Student::setId(std::string id){
+int Student::setId(std::string id){
 	this->_id = id;
-	return *this;
+	return SUCCESS;
 }
 
 std::string Student::getId(){
 	return _id;
 };
 
-Student& Student::setName(std::string name){
+int Student::setName(std::string name){
 	this->_name = name;
-	return *this;
+	return SUCCESS;
 }
 
 std::string Student::getName(){
 	return _name;
 };
 
-Student& Student::setLastName(std::string lastName){
+int Student::setLastName(std::string lastName){
 	this->_lastName = lastName;
-	return *this;
+	return SUCCESS;
 }
 
 std::string Student::getLastName(){
 	return _lastName;
 };
 
-Student& Student::setPhone(int phone){
+int Student::setPhone(int phone){
+	if ( unlikely(phone < 100000000) )
+		return STUDENT_INVALID_PHONE;
+		
 	this->_phone = phone;
-	return *this;
+	return SUCCESS;
 }
 
 int Student::getPhone(){
 	return _phone;
 };
 
-Student& Student::setEmail(std::string email){
+int Student::setEmail(std::string email){
+	std::regex emailRegex{"([[:alnum:]]+)@([[:alnum:]]+)[.]([[:alnum:]]+)$"};
+	if ( unlikely(!(std::regex_match(email, emailRegex))) )
+		return STUDENT_INVALID_EMAIL;
+		
 	this->_email = email;
-	return *this;
+	return SUCCESS;
 }
 
 std::string Student::getEmail(){
 	return _email;
 };
 
-Student& Student::setAddress(std::string address){
+int Student::setAddress(std::string address){
 	this->_address = address;
-	return *this;
+	return SUCCESS;
 }
 
 std::string Student::getAddress(){
@@ -68,9 +75,9 @@ std::string Student::getAddress(){
 };
 
 
-Student& Student::setHighestCourse(unsigned short int highestCourse){
+int Student::setHighestCourse(unsigned short int highestCourse){
 	this->_highestCourse = highestCourse;
-	return *this;
+	return SUCCESS;
 }
 
 unsigned short int Student::getHighestCourse(){
@@ -78,9 +85,9 @@ unsigned short int Student::getHighestCourse(){
 };
 
 
-Student& Student::setGroupNumber(unsigned int groupNumber){
+int Student::setGroupNumber(unsigned int groupNumber){
 	this->_groupNumber = groupNumber;
-	return *this;
+	return SUCCESS;
 }
 
 unsigned int Student::getGroupNumber(){
@@ -88,15 +95,21 @@ unsigned int Student::getGroupNumber(){
 };
 
 
-Student& Student::setBirthAt(tm birthAt){
-	this->_birthAt = mktime(&birthAt);
-	return *this;
+int Student::setBirthAt(tm birthAt){
+	time_t newDate = mktime(&birthAt);
+	if ( unlikely(newDate == -1) )
+		return STUDENT_INVALID_DATE;
+		
+	this->_birthAt = newDate;
+	return SUCCESS;
 }
 
 // overloaded function for unix time
-Student& Student::setBirthAt(time_t birthAt){
+int Student::setBirthAt(time_t birthAt){
+	if ( birthAt < 0 )
+		return STUDENT_INVALID_DATE;
 	this->_birthAt = birthAt;
-	return *this;
+	return SUCCESS;
 }
 
 tm Student::getBirthAt(){
@@ -107,9 +120,9 @@ time_t Student::getBirthAtUnix(){
 	return this->_birthAt;
 }
 
-Student& Student::setIsLeader(bool isLeader){
+int Student::setIsLeader(bool isLeader){
 	this->_isLeader = isLeader;
-	return *this;
+	return SUCCESS;
 }
 
 bool Student::getIsLeader(){

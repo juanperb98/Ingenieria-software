@@ -11,6 +11,11 @@
 #ifndef __STUDENT__
 #define __STUDENT__
 
+#include "compiler.hpp"
+#include "StudentErrorCodes.hpp"
+#include "ErrorCodes.hpp"
+
+#include <regex>
 #include <ctime>
 #include <string>
 
@@ -26,42 +31,41 @@ class Student{
 		unsigned int _groupNumber = 0;
 		time_t _birthAt = 0;
 		bool _isLeader = false;
-		
+
 	public:
-		Student& setId(std::string id);
-		std::string getId();		
+		int setId(std::string id);
+		std::string getId();
 		
-		Student& setName(std::string name);
+		int setName(std::string name);
 		std::string getName();
 		
-		Student& setLastName(std::string lastName);
-		std::string getLastName();		
+		int setLastName(std::string lastName);
+		std::string getLastName();
 		
-		Student& setPhone(int phone);
-		int getPhone();		
+		int setPhone(int phone);
+		int getPhone();	
 		
-		Student& setEmail(std::string email);
-		std::string getEmail();		
+		int setEmail(std::string email);
+		std::string getEmail();	
 		
-		Student& setAddress(std::string address);
+		int setAddress(std::string address);
 		std::string getAddress();
 		
-		Student& setHighestCourse(unsigned short int highestCourse);
+		int setHighestCourse(unsigned short int highestCourse);
 		unsigned short int getHighestCourse();
 		
-		Student& setGroupNumber(unsigned int groupNumber);
+		int setGroupNumber(unsigned int groupNumber);
 		unsigned int getGroupNumber();
 		
-		Student& setBirthAt(tm birthAt);
+		int setBirthAt(tm birthAt);
 		// overloaded function for unix time
-		Student& setBirthAt(time_t birthAt);
+		int setBirthAt(time_t birthAt);
 		tm getBirthAt();
 		// returns in unix's time
 		time_t getBirthAtUnix();
 		
-		Student& setIsLeader(bool isLeader);
+		int setIsLeader(bool isLeader);
 		bool getIsLeader();
-
-};	
+};
 
 #endif
