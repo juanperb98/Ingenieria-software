@@ -1,19 +1,19 @@
 # Backlog
 
-| card			   | duration | priority |
+| card                     | duration | priority |
 |--------------------------|:--------:|----------|
-| CLI			   | 5	      | high     |
-| DB Wrapper		   | 8	      | high     |
-| Student Class		   | 2	      | high     |
-| Classroom::addStudent	   | 1	      | high     |
-| Classroom::showStudents  | 2	      | high     |
-| Classroom::searchStudent | 3	      | medium   |
-| Classroom::ModifyStudent | 1	      | medium   |
-| Classroom::exportStudent | 8	      | medium   |
-| Classroom::exportDB	   | 5	      | medium   |
-| Classroom::ImportDB	   | 5	      | medium   |
-| Teacher Class		   | 1	      | medium   |
-| Classroom::deleteStudent | 2	      | low	 |
+| CLI                      | 5        | high     |
+| DB Wrapper               | 8        | high     |
+| Student Class            | 2        | high     |
+| Classroom::addStudent    | 1        | high     |
+| Classroom::showStudents  | 2        | high     |
+| Classroom::searchStudent | 3        | medium   |
+| Classroom::ModifyStudent | 1        | medium   |
+| Classroom::exportStudent | 8        | medium   |
+| Classroom::exportDB      | 5        | medium   |
+| Classroom::ImportDB      | 5        | medium   |
+| Teacher Class            | 1        | medium   |
+| Classroom::deleteStudent | 2        | low      |
 
 
 
@@ -30,11 +30,11 @@ none
 
 ## table
 
-|card		|duration|assigned to	|Finished?|
+|card           |duration|assigned to   |Finished?|
 |---------------|:------:|--------------|---------|
-|CLI		|5	 |Juan Pedro	| ?	  |
-|DB Wrapper	|8	 |Diego		| nope	  |
-|Student Class	|2	 |Diego		| yes	  |
+|CLI            |5       |Juan Pedro    | ?       |
+|DB Wrapper     |8       |Diego         | nope    |
+|Student Class  |2       |Diego         | yes     |
 
 ## metrics
 units per sprint: 2
@@ -50,7 +50,7 @@ None
 
 ## table
 
-|card		|duration|assigned to	|Finished?|
+|card           |duration|assigned to   |Finished?|
 |---------------|:------:|--------------|---------|
 
 ## metrics
@@ -67,7 +67,7 @@ None
 
 ## table
 
-|card		|duration|assigned to	|Finished?|
+|card           |duration|assigned to   |Finished?|
 |---------------|:------:|--------------|---------|
 
 ## metrics
@@ -84,7 +84,7 @@ None
 
 ## table
 
-|card		|duration|assigned to	|Finished?|
+|card           |duration|assigned to   |Finished?|
 |---------------|:------:|--------------|---------|
 
 ## metrics
@@ -101,7 +101,7 @@ None
 
 ## table
 
-|card		|duration|assigned to	|Finished?|
+|card           |duration|assigned to   |Finished?|
 |---------------|:------:|--------------|---------|
 
 ## metrics
@@ -118,7 +118,7 @@ None
 
 ## table
 
-|card		|duration|assigned to	|Finished?|
+|card           |duration|assigned to   |Finished?|
 |---------------|:------:|--------------|---------|
 
 ## metrics
@@ -135,7 +135,7 @@ None
 
 ## table
 
-|card		|duration|assigned to	|Finished?|
+|card           |duration|assigned to   |Finished?|
 |---------------|:------:|--------------|---------|
 
 ## metrics
