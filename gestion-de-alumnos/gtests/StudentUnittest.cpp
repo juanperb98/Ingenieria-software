@@ -5,6 +5,8 @@
  *	Diego Rodriguez Riera
  *
  * Unittests for Student class
+ *
+ * Not doing mocks becouse of the low complexity of the program
  */
  
 
