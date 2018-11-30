@@ -1,10 +1,10 @@
-/* gtests/StudentUnittest.hpp
+/* gtests/DBControllerUnittest.hpp
  *
  * Licenced under GPLv3
  * Authors:
  *	Diego Rodriguez Riera
  *
- * Unittests for Student class
+ * Unittests for DBController class
  *
  * Not doing mocks becouse of the low complexity of the program
  */
