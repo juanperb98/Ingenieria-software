@@ -25,6 +25,8 @@
 - DB wrapper
 - Student class
 
+15 units
+
 ## extra cards:
 none
 
@@ -32,8 +34,8 @@ none
 
 |card           |duration|assigned to   |Finished?|
 |---------------|:------:|--------------|---------|
-|CLI            |5       |Juan Pedro    | ?       |
-|DB Wrapper     |8       |Diego         | nope    |
+|CLI            |5       |Juan Pedro    | no      |
+|DB Wrapper     |8       |Diego         | no      |
 |Student Class  |2       |Diego         | yes     |
 
 ## metrics
@@ -44,6 +46,10 @@ units per sprint: 2
 # sprint 2 (3/12/18) - (5/12/18)
 
 ## planned cards:
+- CLI
+- DB Wrapper
+
+13 units
 
 ## extra cards:
 None
@@ -52,6 +58,8 @@ None
 
 |card           |duration|assigned to   |Finished?|
 |---------------|:------:|--------------|---------|
+|CLI            |5       |Juan Pedro    | ?       |
+|DB Wrapper     |8       |Diego         | ?       |
 
 ## metrics
 units per sprint: 
