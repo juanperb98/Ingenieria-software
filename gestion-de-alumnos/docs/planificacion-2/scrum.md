@@ -41,6 +41,7 @@ none
 ## metrics
 units per sprint: 2
 
+[release](https://github.com/juanperb98/Ingenieria-software/releases/tag/v0.1-alpha)
 
 
 # sprint 2 (3/12/18) - (5/12/18)
