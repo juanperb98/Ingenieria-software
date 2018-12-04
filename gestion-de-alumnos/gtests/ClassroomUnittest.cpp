@@ -130,10 +130,10 @@ TEST(Classroom, deleteStudent){
 	
 	EXPECT_EQ(classroom.getStudents().size(), 2);
 	EXPECT_EQ(classroom.deleteStudent(s1), SUCCESS);
-	// EXPECT_EQ(classroom.getStudents().size(), 1);
-	// EXPECT_EQ(classroom.deleteStudent(s1), CLASSROOM_STUDENT_NOT_FOUND);
-	// EXPECT_EQ(classroom.deleteStudent(s2), SUCCESS);
-	// EXPECT_EQ(classroom.getStudents().size(), 0);
-	// EXPECT_EQ(classroom.deleteStudent(s2), CLASSROOM_STUDENT_NOT_FOUND);
+	EXPECT_EQ(classroom.getStudents().size(), 1);
+	EXPECT_EQ(classroom.deleteStudent(s1), CLASSROOM_STUDENT_NOT_FOUND);
+	EXPECT_EQ(classroom.deleteStudent(s2), SUCCESS);
+	EXPECT_EQ(classroom.getStudents().size(), 0);
+	EXPECT_EQ(classroom.deleteStudent(s2), CLASSROOM_STUDENT_NOT_FOUND);
 	
 }
