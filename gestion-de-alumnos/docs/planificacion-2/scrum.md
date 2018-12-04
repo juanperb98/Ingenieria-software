@@ -49,9 +49,10 @@ units per sprint: 2
 
 ## planned cards:
 - CLI
-- Classroom Class
+- DB Wrapper
+- Classrom Class
 
-13 units
+20 units
 
 ## extra cards:
 None
@@ -61,7 +62,8 @@ None
 |card           |duration|assigned to   |Finished?|
 |---------------|:------:|--------------|---------|
 |CLI            |5       |Juan Pedro    | ?       |
-|Classroom Class |8       |Diego         | ?       |
+|DB Wrapper     |8       |Diego         | ?       |
+|Classrom Class |8       |Diego         | ?       |
 
 ## metrics
 units per sprint: 

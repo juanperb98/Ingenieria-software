@@ -19,16 +19,15 @@
 #include <regex>
 #include <ctime>
 #include <string>
-#include <list>
 
 class Classrom{
 	private:
-		std::list<Student> students;
+		std::vector<Student> students;
 
 	public:
 		int addStudent(Student student);
 		int deleteStudent(Student student);
-		std::list<Student> getStudents();
+		std::vector<Student> getStudents();
 };
 
 #endif
