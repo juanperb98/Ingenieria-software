@@ -53,7 +53,17 @@ int Student::getPhone(){
 };
 
 int Student::setEmail(std::string email){
+	/* Reget to check if the email is semanticly valid
+	 *
+	 * diego@uco.es is valid
+	 * @uco.es is not
+	 * diego.es is not
+	 * diego@uco is not
+	 * diego@uco. is not
+	 */
 	std::regex emailRegex{"([[:alnum:]]+)@([[:alnum:]]+)[.]([[:alnum:]]+)$"};
+	
+	// if not match
 	if ( unlikely(!(std::regex_match(email, emailRegex))) )
 		return STUDENT_INVALID_EMAIL;
 		
@@ -96,7 +106,10 @@ unsigned int Student::getGroupNumber(){
 
 
 int Student::setBirthAt(tm birthAt){
+	// converts from tm to unix time
 	time_t newDate = mktime(&birthAt);
+	
+	// if unix time is negative
 	if ( unlikely(newDate == -1) )
 		return STUDENT_INVALID_DATE;
 		
@@ -106,6 +119,7 @@ int Student::setBirthAt(tm birthAt){
 
 // overloaded function for unix time
 int Student::setBirthAt(time_t birthAt){
+	// if unix time is negative
 	if ( birthAt < 0 )
 		return STUDENT_INVALID_DATE;
 	this->_birthAt = birthAt;
@@ -113,6 +127,7 @@ int Student::setBirthAt(time_t birthAt){
 }
 
 tm Student::getBirthAt(){
+	// convets from unix time to tm struct and returns it
 	return *localtime(&this->_birthAt);
 }
 
