@@ -6,13 +6,16 @@
  *
  * Headers of the sysmtem's DBController
  */
-
+ 
+#include <string>
+#include "Classroom.hpp"
 
 #ifndef __DBCONTROLLER__
 #define __DBCONTROLLER__
 
 class DBController{
 	public:
+		std::string filePath;
 	private:
 };
 

@@ -7,6 +7,7 @@
 | Student Class            | 2        | high     |
 | Classroom::addStudent    | 1        | high     |
 | Classroom::showStudents  | 2        | high     |
+| Classroom Class          | 8        | high     |
 | Classroom::searchStudent | 3        | medium   |
 | Classroom::ModifyStudent | 1        | medium   |
 | Classroom::exportStudent | 8        | medium   |
@@ -48,7 +49,7 @@ units per sprint: 2
 
 ## planned cards:
 - CLI
-- DB Wrapper
+- Classroom Class
 
 13 units
 
@@ -60,7 +61,7 @@ None
 |card           |duration|assigned to   |Finished?|
 |---------------|:------:|--------------|---------|
 |CLI            |5       |Juan Pedro    | ?       |
-|DB Wrapper     |8       |Diego         | ?       |
+|Classroom Class |8       |Diego         | ?       |
 
 ## metrics
 units per sprint: 
