@@ -10,15 +10,26 @@
 
 #include "Classroom.hpp"
 
-std::vector<Student> Classrom::getStudents(){
+std::vector<Student> Classroom::getStudents(){
 	return students;
 }
 
-int Classrom::addStudent(Student student){
+int Classroom::addStudent(Student student){
 	for (size_t i = 0; i < getStudents().size(); i++) {
 		if ( unlikely(student.getId()==students[i].getId()) )
 			return CLASSROOM_DUPLICATED_STUDENT;
 	}
 	students.push_back(student);
 	return SUCCESS;
+}
+
+int Classroom::deleteStudent(Student student){
+	std::vector<Student>::iterator it;
+	for (it = this->students.begin(); it != this->students.end(); it++) {
+		if ( unlikely(student.getId() == it->getId()) ){
+			this->students.erase(it);
+			return SUCCESS;
+		}
+	}
+	return CLASSROOM_STUDENT_NOT_FOUND;
 }

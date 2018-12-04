@@ -20,7 +20,7 @@
 #include <ctime>
 #include <string>
 
-class Classrom{
+class Classroom{
 	private:
 		std::vector<Student> students;
 
