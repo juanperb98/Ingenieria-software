@@ -7,7 +7,7 @@
 | Student Class            | 2        | high     |
 | Classroom::addStudent    | 1        | high     |
 | Classroom::showStudents  | 2        | high     |
-| Classroom Class          | 8        | high     |
+| Classroom Class          | 3        | high     |
 | Classroom::searchStudent | 3        | medium   |
 | Classroom::ModifyStudent | 1        | medium   |
 | Classroom::exportStudent | 8        | medium   |
@@ -52,21 +52,22 @@ units per sprint: 2
 - DB Wrapper
 - Classrom Class
 
-20 units
+17 units
 
 ## extra cards:
-None
+Classroom::addStudent
 
 ## table
 
-|card           |duration|assigned to   |Finished?|
-|---------------|:------:|--------------|---------|
-|CLI            |5       |Juan Pedro    | ?       |
-|DB Wrapper     |8       |Diego         | ?       |
-|Classrom Class |8       |Diego         | ?       |
+|card                  |duration|assigned to   |Finished?|
+|----------------------|:------:|--------------|---------|
+|CLI                   |5       |Juan Pedro    | ?       |
+|DB Wrapper            |8       |Diego         | kind of |
+|Classrom Class        |3       |Diego         | yes     |
+|Classroom::addStudent |1       |Diego         | yes     |
 
 ## metrics
-units per sprint: 
+units per sprint: 4
 
 
 

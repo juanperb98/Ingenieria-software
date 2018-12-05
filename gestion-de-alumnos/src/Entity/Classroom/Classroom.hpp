@@ -13,7 +13,7 @@
 
 #include "compiler.hpp"
 #include "ClassroomErrorCodes.hpp"
-#include "ErrorCodes.hpp"
+#include "errorCodes.hpp"
 #include "Student.hpp"
 
 #include <regex>
