@@ -49,21 +49,24 @@ units per sprint: 2
 ## planned cards:
 - CLI
 - DB Wrapper
+- Classrom Class
 
-13 units
+17 units
 
 ## extra cards:
-None
+Classroom::addStudent
 
 ## table
 
-|card           |duration|assigned to   |Finished?|
-|---------------|:------:|--------------|---------|
-|CLI            |5       |Juan Pedro    | ?       |
-|DB Wrapper     |8       |Diego         | ?       |
+|card                  |duration|assigned to   |Finished?|
+|----------------------|:------:|--------------|---------|
+|CLI                   |5       |Juan Pedro    | no      |
+|DB Wrapper            |8       |Diego         | kind of |
+|Classrom Class        |3       |Diego         | yes     |
+|Classroom::addStudent |1       |Diego         | yes     |
 
 ## metrics
-units per sprint: 
+units per sprint: 4
 
 
 
