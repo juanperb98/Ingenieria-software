@@ -68,7 +68,7 @@ Classroom::addStudent
 ## metrics
 units per sprint: 4
 
-
+[release](https://github.com/juanperb98/Ingenieria-software/releases/tag/v0.2-alpha)
 
 # sprint 3 (6/12/18) - (9/12/18)
 
