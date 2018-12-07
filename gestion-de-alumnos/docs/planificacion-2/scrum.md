@@ -61,7 +61,7 @@ Classroom::addStudent
 
 |card                  |duration|assigned to   |Finished?|
 |----------------------|:------:|--------------|---------|
-|CLI                   |5       |Juan Pedro    | ?       |
+|CLI                   |5       |Juan Pedro    | no      |
 |DB Wrapper            |8       |Diego         | kind of |
 |Classrom Class        |3       |Diego         | yes     |
 |Classroom::addStudent |1       |Diego         | yes     |
@@ -70,6 +70,7 @@ Classroom::addStudent
 units per sprint: 4
 
 
+[release](https://github.com/juanperb98/Ingenieria-software/releases/tag/v0.2-alpha)
 
 # sprint 3 (6/12/18) - (9/12/18)
 
