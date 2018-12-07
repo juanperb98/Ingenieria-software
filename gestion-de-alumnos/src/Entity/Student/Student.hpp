@@ -34,38 +34,38 @@ class Student{
 
 	public:
 		int setId(std::string id);
-		std::string getId();
+		std::string getId()const;
 		
 		int setName(std::string name);
-		std::string getName();
+		std::string getName()const;
 		
 		int setLastName(std::string lastName);
 		std::string getLastName();
 		
 		int setPhone(int phone);
-		int getPhone();	
+		int getPhone()const;	
 		
 		int setEmail(std::string email);
-		std::string getEmail();	
+		std::string getEmail()const;	
 		
 		int setAddress(std::string address);
-		std::string getAddress();
+		std::string getAddress()const;
 		
 		int setHighestCourse(unsigned short int highestCourse);
-		unsigned short int getHighestCourse();
+		unsigned short int getHighestCourse()const;
 		
 		int setGroupNumber(unsigned int groupNumber);
-		unsigned int getGroupNumber();
+		unsigned int getGroupNumber()const;
 		
 		int setBirthAt(tm birthAt);
 		// overloaded function for unix time
 		int setBirthAt(time_t birthAt);
 		tm getBirthAt();
 		// returns in unix's time
-		time_t getBirthAtUnix();
+		time_t getBirthAtUnix()const;
 		
 		int setIsLeader(bool isLeader);
-		bool getIsLeader();
+		bool getIsLeader()const;
 };
 
 #endif

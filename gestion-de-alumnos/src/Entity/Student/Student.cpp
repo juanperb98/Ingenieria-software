@@ -18,7 +18,7 @@ int Student::setId(std::string id){
 	return SUCCESS;
 }
 
-std::string Student::getId(){
+std::string Student::getId()const{
 	return _id;
 };
 
@@ -27,7 +27,7 @@ int Student::setName(std::string name){
 	return SUCCESS;
 }
 
-std::string Student::getName(){
+std::string Student::getName()const{
 	return _name;
 };
 
@@ -48,7 +48,7 @@ int Student::setPhone(int phone){
 	return SUCCESS;
 }
 
-int Student::getPhone(){
+int Student::getPhone()const {
 	return _phone;
 };
 
@@ -71,7 +71,7 @@ int Student::setEmail(std::string email){
 	return SUCCESS;
 }
 
-std::string Student::getEmail(){
+std::string Student::getEmail()const{
 	return _email;
 };
 
@@ -80,7 +80,7 @@ int Student::setAddress(std::string address){
 	return SUCCESS;
 }
 
-std::string Student::getAddress(){
+std::string Student::getAddress()const{
 	return _address;
 };
 
@@ -90,7 +90,7 @@ int Student::setHighestCourse(unsigned short int highestCourse){
 	return SUCCESS;
 }
 
-unsigned short int Student::getHighestCourse(){
+unsigned short int Student::getHighestCourse()const{
 	return _highestCourse;
 };
 
@@ -100,7 +100,7 @@ int Student::setGroupNumber(unsigned int groupNumber){
 	return SUCCESS;
 }
 
-unsigned int Student::getGroupNumber(){
+unsigned int Student::getGroupNumber()const{
 	return _groupNumber;
 };
 
@@ -131,7 +131,7 @@ tm Student::getBirthAt(){
 	return *localtime(&this->_birthAt);
 }
 
-time_t Student::getBirthAtUnix(){
+time_t Student::getBirthAtUnix()const{
 	return this->_birthAt;
 }
 
@@ -140,7 +140,7 @@ int Student::setIsLeader(bool isLeader){
 	return SUCCESS;
 }
 
-bool Student::getIsLeader(){
+bool Student::getIsLeader()const {
 	return _isLeader;
 };
 
