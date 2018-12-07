@@ -28,6 +28,6 @@ class Classroom{
 		int addStudent(Student student);
 		int deleteStudent(Student student);
 		std::vector<Student> getStudents();
-		int searchStudent( Student & student,std::vector<Student> students);
+		int searchStudent( Student & student,std::vector<Student> &students);
 };
 #endif

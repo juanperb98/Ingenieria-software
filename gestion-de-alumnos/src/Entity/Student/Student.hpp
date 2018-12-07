@@ -35,35 +35,35 @@ class Student{
 	public:
 		int setId(std::string id);
 		std::string getId()const;
-		
+
 		int setName(std::string name);
 		std::string getName()const;
-		
+
 		int setLastName(std::string lastName);
-		std::string getLastName();
-		
+		std::string getLastName()const;
+
 		int setPhone(int phone);
-		int getPhone()const;	
-		
+		int getPhone()const;
+
 		int setEmail(std::string email);
-		std::string getEmail()const;	
-		
+		std::string getEmail()const;
+
 		int setAddress(std::string address);
 		std::string getAddress()const;
-		
+
 		int setHighestCourse(unsigned short int highestCourse);
 		unsigned short int getHighestCourse()const;
-		
+
 		int setGroupNumber(unsigned int groupNumber);
 		unsigned int getGroupNumber()const;
-		
+
 		int setBirthAt(tm birthAt);
 		// overloaded function for unix time
 		int setBirthAt(time_t birthAt);
 		tm getBirthAt();
 		// returns in unix's time
 		time_t getBirthAtUnix()const;
-		
+
 		int setIsLeader(bool isLeader);
 		bool getIsLeader()const;
 };

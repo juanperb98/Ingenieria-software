@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <iostream>
 #include "Entity/Classroom/Classroom.hpp"
 #include "Entity/Student/Student.hpp"
 int main ()
@@ -37,4 +38,8 @@ std::vector<Student> vector1;
 classroom.addStudent(s1);
 classroom.addStudent(s2);
 classroom.searchStudent(s2,vector1);
+std::vector<Student>::iterator studentIterator;
+for (studentIterator = vector1.begin();studentIterator != vector1.end();studentIterator++){
+    std::cout<<studentIterator->getId();
+  }
 }
