@@ -3,7 +3,7 @@
  * Licenced under GPLv3
  * Authors:
  *	Diego Rodriguez Riera
- *
+ *	Hector Romero Lopez
  * Sorce code for Student class
  * This class should be used in a array of students
  * in the class 'classroom'
@@ -18,7 +18,7 @@ int Student::setId(std::string id){
 	return SUCCESS;
 }
 
-std::string Student::getId(){
+std::string Student::getId()const{
 	return _id;
 };
 
@@ -27,7 +27,7 @@ int Student::setName(std::string name){
 	return SUCCESS;
 }
 
-std::string Student::getName(){
+std::string Student::getName()const{
 	return _name;
 };
 
@@ -36,19 +36,19 @@ int Student::setLastName(std::string lastName){
 	return SUCCESS;
 }
 
-std::string Student::getLastName(){
+std::string Student::getLastName()const{
 	return _lastName;
 };
 
 int Student::setPhone(int phone){
 	if ( unlikely(phone < 100000000) )
 		return STUDENT_INVALID_PHONE;
-		
+
 	this->_phone = phone;
 	return SUCCESS;
 }
 
-int Student::getPhone(){
+int Student::getPhone()const {
 	return _phone;
 };
 
@@ -62,16 +62,16 @@ int Student::setEmail(std::string email){
 	 * diego@uco. is not
 	 */
 	std::regex emailRegex{"([[:alnum:]]+)@([[:alnum:]]+)[.]([[:alnum:]]+)$"};
-	
+
 	// if not match
 	if ( unlikely(!(std::regex_match(email, emailRegex))) )
 		return STUDENT_INVALID_EMAIL;
-		
+
 	this->_email = email;
 	return SUCCESS;
 }
 
-std::string Student::getEmail(){
+std::string Student::getEmail()const{
 	return _email;
 };
 
@@ -80,7 +80,7 @@ int Student::setAddress(std::string address){
 	return SUCCESS;
 }
 
-std::string Student::getAddress(){
+std::string Student::getAddress()const{
 	return _address;
 };
 
@@ -90,7 +90,7 @@ int Student::setHighestCourse(unsigned short int highestCourse){
 	return SUCCESS;
 }
 
-unsigned short int Student::getHighestCourse(){
+unsigned short int Student::getHighestCourse()const{
 	return _highestCourse;
 };
 
@@ -100,7 +100,7 @@ int Student::setGroupNumber(unsigned int groupNumber){
 	return SUCCESS;
 }
 
-unsigned int Student::getGroupNumber(){
+unsigned int Student::getGroupNumber()const{
 	return _groupNumber;
 };
 
@@ -108,11 +108,11 @@ unsigned int Student::getGroupNumber(){
 int Student::setBirthAt(tm birthAt){
 	// converts from tm to unix time
 	time_t newDate = mktime(&birthAt);
-	
+
 	// if unix time is negative
 	if ( unlikely(newDate == -1) )
 		return STUDENT_INVALID_DATE;
-		
+
 	this->_birthAt = newDate;
 	return SUCCESS;
 }
@@ -131,7 +131,7 @@ tm Student::getBirthAt(){
 	return *localtime(&this->_birthAt);
 }
 
-time_t Student::getBirthAtUnix(){
+time_t Student::getBirthAtUnix()const{
 	return this->_birthAt;
 }
 
@@ -140,8 +140,6 @@ int Student::setIsLeader(bool isLeader){
 	return SUCCESS;
 }
 
-bool Student::getIsLeader(){
+bool Student::getIsLeader()const {
 	return _isLeader;
 };
-
-

@@ -26,7 +26,10 @@ int DBController::save(Classroom classroom){
 	// if the file exists, close it and open it in wirte binary mode
 	testFile.close();	
 	std::ofstream file;
+
+
 	file.open(this->getPath());
+
 	
 	// checks if it's open
 	if ( !file.is_open() )
@@ -34,6 +37,7 @@ int DBController::save(Classroom classroom){
 	
 	// writes the students to file
 	std::vector<Student> students;
+
 	Student s;
 	students = classroom.getStudents();
 	for (size_t i = 0; i < students.size(); i++) {
@@ -41,21 +45,25 @@ int DBController::save(Classroom classroom){
 		
 		file<<s.getId()<<';'<<s.getName()<<';'<<s.getLastName()<<';'<<s.getPhone()<<';'<<s.getEmail()<<';'<<s.getAddress()<<';'<<s.getHighestCourse()<<';'<<s.getGroupNumber()<<';'<<(int)s.getBirthAtUnix()<<';'<<s.getIsLeader()<<'\n';
 		
+
 	}
 	
 	file.close();	
 	return SUCCESS;
 }
 
+
 int DBController::load(Classroom& classroom){
 	// checks if file exist
 	std::ifstream file;
 	file.open(this->getPath().c_str());
+
 	if ( !file.is_open() )
 		return DBCONTROLLER_FILE_NOT_FOUND;
 	
 	// loads the file into Classroom
 	Student student;
+
 	std::string line;
 	std::string field;
 	Student s;
@@ -116,6 +124,7 @@ int DBController::load(Classroom& classroom){
 		
 	}
 	file.close();
+
 	return SUCCESS;
 }
 
@@ -129,6 +138,6 @@ int DBController::clear(){
 		return DBCONTROLLER_INVALID_PATH;
 	if ( remove(getPath().c_str()) != 0 )
 		return DBCONTROLLER_FILE_NOT_FOUND;
-	
+
 	return SUCCESS;
 }

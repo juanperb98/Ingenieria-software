@@ -21,7 +21,9 @@ TEST(DBController, Builder){
 }
 
 TEST(DBController, loader_empty_and_rm){
+
 	Classroom c1;
+
 	std::string path = "/tmp/dbtest.bin";
 	DBController db(path);
 	db.clear();
@@ -46,6 +48,7 @@ TEST(DBController, setter_and_loader){
 	s1.setBirthAt(date);
 	s1.setIsLeader(true);
 	
+
 	Student s2;	
 	s2.setId("1234");
 	s2.setName("juan");
@@ -60,6 +63,7 @@ TEST(DBController, setter_and_loader){
 	
 	classroom.addStudent(s1);
 	classroom.addStudent(s2);
+
 	
 	std::string path = "/tmp/dbtest.bin";
 	DBController db(path);
@@ -88,4 +92,5 @@ TEST(DBController, setter_and_loader){
 	EXPECT_EQ(classroom2.getStudents()[1].getBirthAtUnix(), s2.getBirthAtUnix());
 	EXPECT_EQ(classroom2.getStudents()[1].getIsLeader(), s2.getIsLeader());
 }	
+
 
