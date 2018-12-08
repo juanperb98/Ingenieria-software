@@ -7,7 +7,7 @@
 | Student Class            | 2        | high     |
 | Classroom::addStudent    | 1        | high     |
 | Classroom::showStudents  | 2        | high     |
-| Classroom Class          | 8        | high     |
+| Classroom Class          | 3        | high     |
 | Classroom::searchStudent | 3        | medium   |
 | Classroom::ModifyStudent | 1        | medium   |
 | Classroom::exportStudent | 8        | medium   |
@@ -63,6 +63,7 @@ Classroom::addStudent
 
 |card                  |duration|assigned to   |Finished?|
 |----------------------|:------:|--------------|---------|
+
 |CLI                   |5       |Juan Pedro    | no      |
 |DB Wrapper            |8       |Diego         | kind of |
 |Classrom Class        |3       |Diego         | yes     |
@@ -70,6 +71,7 @@ Classroom::addStudent
 
 ## metrics
 units per sprint: 4
+
 
 [release](https://github.com/juanperb98/Ingenieria-software/releases/tag/v0.2-alpha)
 

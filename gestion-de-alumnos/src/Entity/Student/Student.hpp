@@ -13,7 +13,7 @@
 
 #include "compiler.hpp"
 #include "StudentErrorCodes.hpp"
-#include "ErrorCodes.hpp"
+#include "errorCodes.hpp"
 
 #include <regex>
 #include <ctime>
