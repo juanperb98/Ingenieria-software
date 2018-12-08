@@ -7,6 +7,7 @@
 | Student Class            | 2        | high     |
 | Classroom::addStudent    | 1        | high     |
 | Classroom::showStudents  | 2        | high     |
+| Classroom Class          | 8        | high     |
 | Classroom::searchStudent | 3        | medium   |
 | Classroom::ModifyStudent | 1        | medium   |
 | Classroom::exportStudent | 8        | medium   |
@@ -51,12 +52,14 @@ units per sprint: 2
 - DB Wrapper
 - Classrom Class
 
-17 units
+21 units
+
 
 ## extra cards:
 Classroom::addStudent
 
 ## table
+
 
 |card                  |duration|assigned to   |Finished?|
 |----------------------|:------:|--------------|---------|
