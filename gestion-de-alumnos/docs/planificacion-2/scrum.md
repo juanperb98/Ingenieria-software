@@ -52,23 +52,26 @@ units per sprint: 2
 - DB Wrapper
 - Classrom Class
 
-20 units
+21 units
+
 
 ## extra cards:
-None
+Classroom::addStudent
 
 ## table
 
-|card           |duration|assigned to   |Finished?|
-|---------------|:------:|--------------|---------|
-|CLI            |5       |Juan Pedro    | ?       |
-|DB Wrapper     |8       |Diego         | ?       |
-|Classrom Class |8       |Diego         | ?       |
+
+|card                  |duration|assigned to   |Finished?|
+|----------------------|:------:|--------------|---------|
+|CLI                   |5       |Juan Pedro    | no      |
+|DB Wrapper            |8       |Diego         | kind of |
+|Classrom Class        |3       |Diego         | yes     |
+|Classroom::addStudent |1       |Diego         | yes     |
 
 ## metrics
-units per sprint: 
+units per sprint: 4
 
-
+[release](https://github.com/juanperb98/Ingenieria-software/releases/tag/v0.2-alpha)
 
 # sprint 3 (6/12/18) - (9/12/18)
 
