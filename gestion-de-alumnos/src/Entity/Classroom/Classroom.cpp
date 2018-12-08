@@ -11,6 +11,7 @@
 
 std::vector<Student> Classroom::getStudents(){
 	return students_;
+
 }
 
 int Classroom::addStudent(Student student){
@@ -19,11 +20,13 @@ int Classroom::addStudent(Student student){
 			return CLASSROOM_DUPLICATED_STUDENT;
 	}
 	students_.push_back(student);
+
 	return SUCCESS;
 }
 
 int Classroom::deleteStudent(Student student){
 	std::vector<Student>::iterator it;
+
 	for (it = this->students_.begin(); it != this->students_.end(); it++) {
 		if ( unlikely(student.getId() == it->getId()) ){
 			this->students_.erase(it);
@@ -86,3 +89,4 @@ int Classroom::searchStudent(Student & student, std::vector<Student> &students){
 	}
 	return SUCCESS;
 }
+

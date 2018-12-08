@@ -19,6 +19,9 @@
 #include "errorCodes.hpp"
 #include "DBControllerErrorCodes.hpp"
 
+
+#include <iostream>
+
 class DBController{
 	private:
 		std::string _filePath;
@@ -28,7 +31,8 @@ class DBController{
 		std::string getPath();
 		
 		int save(Classroom classroom);
-		int load(Classroom* classroom);
+
+		int load(Classroom& classroom);
 		
 		int clear();
 };

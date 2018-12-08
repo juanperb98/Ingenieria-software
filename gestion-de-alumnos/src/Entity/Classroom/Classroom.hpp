@@ -22,7 +22,9 @@
 
 class Classroom{
 	private:
+
 		std::vector<Student> students_;
+
 
 	public:
 		int addStudent(Student student);
@@ -30,4 +32,5 @@ class Classroom{
 		std::vector<Student> getStudents();
 		int searchStudent( Student & student,std::vector<Student> &students);
 };
+
 #endif
