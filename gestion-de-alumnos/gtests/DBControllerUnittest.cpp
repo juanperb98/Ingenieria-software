@@ -88,3 +88,4 @@ TEST(DBController, setter_and_loader){
 	EXPECT_EQ(classroom2.getStudents()[1].getBirthAtUnix(), s2.getBirthAtUnix());
 	EXPECT_EQ(classroom2.getStudents()[1].getIsLeader(), s2.getIsLeader());
 }	
+
