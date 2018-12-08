@@ -10,7 +10,7 @@
 
 #include "DBController.hpp"
 
-DBController::DBController(std::string path): _filePath(path){};
+DBController::DBController(std::string path): _filePath(path){}
 
 std::string DBController::getPath(){
 	return _filePath;

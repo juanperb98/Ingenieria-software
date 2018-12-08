@@ -3,6 +3,7 @@
  * Licenced under GPLv3
  * Authors:
  *	Diego Rodriguez Riera
+ *	Hector Romero Lopez
  *
  * Headers of Classroom class
  */

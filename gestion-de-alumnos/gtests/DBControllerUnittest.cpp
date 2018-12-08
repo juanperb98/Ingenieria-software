@@ -12,7 +12,6 @@
 
 #include "gtest/gtest.h"
 #include "DBController.hpp"
-#include "Classroom.hpp"
 
 TEST(DBController, Builder){
 	std::string path = "/tmp/dbtest.bin";
@@ -47,7 +46,7 @@ TEST(DBController, setter_and_loader){
 	s1.setGroupNumber(4);
 	s1.setBirthAt(date);
 	s1.setIsLeader(true);
-	
+
 
 	Student s2;	
 	s2.setId("1234");
@@ -60,18 +59,18 @@ TEST(DBController, setter_and_loader){
 	s2.setGroupNumber(3);
 	s2.setBirthAt(date);
 	s2.setIsLeader(false);
-	
+
 	classroom.addStudent(s1);
 	classroom.addStudent(s2);
 
-	
+
 	std::string path = "/tmp/dbtest.bin";
 	DBController db(path);
 	db.clear();
 	EXPECT_EQ(db.save(classroom), SUCCESS);
 	EXPECT_EQ(db.load(classroom2), SUCCESS);
-	
-	
+
+
 	EXPECT_EQ(classroom2.getStudents()[0].getId(), s1.getId());
 	EXPECT_EQ(classroom2.getStudents()[0].getName(), s1.getName());
 	EXPECT_EQ(classroom2.getStudents()[0].getLastName(), s1.getLastName());
@@ -81,7 +80,7 @@ TEST(DBController, setter_and_loader){
 	EXPECT_EQ(classroom2.getStudents()[0].getHighestCourse(), s1.getHighestCourse());
 	EXPECT_EQ(classroom2.getStudents()[0].getBirthAtUnix(), s1.getBirthAtUnix());
 	EXPECT_EQ(classroom2.getStudents()[0].getIsLeader(), s1.getIsLeader());
-	
+
 	EXPECT_EQ(classroom2.getStudents()[1].getId(), s2.getId());
 	EXPECT_EQ(classroom2.getStudents()[1].getName(), s2.getName());
 	EXPECT_EQ(classroom2.getStudents()[1].getLastName(), s2.getLastName());
