@@ -78,34 +78,46 @@ units per sprint: 4
 # sprint 3 (6/12/18) - (9/12/18)
 
 ## planned cards:
+- CLI
+- Classroom::searchStudent
+- DBWrapper
 
 ## extra cards:
 None
 
 ## table
 
-|card           |duration|assigned to   |Finished?|
-|---------------|:------:|--------------|---------|
+|card                    |duration|assigned to   |Finished?|
+|------------------------|:------:|--------------|---------|
+|CLI                     |5       |Juan Pedro    | no      |
+|DB Wrapper              |8       |Diego         | yes     |
+|Classroom::searchStudent|8       |hector        | yes     |
 
 ## metrics
-units per sprint: 
+units per sprint: 16
 
 
 
 # sprint 4 (10/12/18) - (12/12/18)
 
 ## planned cards:
-
+- Classroom::exportStudent
+- Classroom::deleteStudent
+- Teacher Class
+- Classroom::ModifyStudent
 ## extra cards:
 None
 
 ## table
 
-|card           |duration|assigned to   |Finished?|
-|---------------|:------:|--------------|---------|
-
+|card                    |duration|assigned to   |Finished?|
+|------------------------|:------:|--------------|---------|
+|Classroom::exportStudent|8       | ?            | ?       |
+|Classroom::deleteStudent|2       | ?            | ?       |
+|Teacher Class           |1       | ?            | ?       |
+|Classroom::ModifyStudent|1       | ?            | ?       |
 ## metrics
-units per sprint: 
+units per sprint: ?
 
 
 
