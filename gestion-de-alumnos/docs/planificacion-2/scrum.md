@@ -115,7 +115,7 @@ None
 |Classroom::exportStudent|8       | Diego        | no      |
 |Classroom::deleteStudent|2       | Diego        | yes     |
 |Teacher Class           |1       | ?            | ?       |
-|Classroom::ModifyStudent|1       | ?            | ?       |
+|Classroom::ModifyStudent|1       | ?            | yes     |
 ## metrics
 units per sprint: 2
 

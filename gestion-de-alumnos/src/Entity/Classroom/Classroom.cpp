@@ -164,9 +164,68 @@ int Classroom::modifyStudent(Student target, Student newData){
 	if ( newData.getEmail() != "" )
 		student.setEmail(newData.getEmail());
 	
+	if ( newData.getAddress() != "" )
+		student.setAddress(newData.getAddress());
+		
+	if ( newData.getHighestCourse() != 0 )
+		student.setHighestCourse(newData.getHighestCourse());
+		
+	if ( newData.getGroupNumber() != 0 )
+		student.setGroupNumber(newData.getGroupNumber());
+		
+	if ( newData.getBirthAtUnix() != 0 )
+		student.setBirthAt(newData.getBirthAtUnix());
+		
+	student.setIsLeader(newData.getIsLeader());
 	
 	this->addStudent(student);
 	
 	return SUCCESS;
 }
 
+
+int Classroom::simpleModifyStudent(Student target, Student newData){
+	std::vector<Student> students;
+	this->searchStudent(target, students);
+	
+	// checks for search errors, only one student must be found
+	if ( students.size() == 0 )
+		return CLASSROOM_STUDENT_NOT_FOUND;
+	if ( students.size() > 1 )
+		return CLASSROOM_MULTIPLES_OCURRENCES;
+	
+	Student student = students[0];
+	
+	this->deleteStudent(students[0]);
+	
+	if ( newData.getId() != "" )
+		student.setId(newData.getId());
+	
+	if ( newData.getName() != "" )
+		student.setName(newData.getName());
+	
+	if ( newData.getLastName() != "" )
+		student.setLastName(newData.getLastName());
+	
+	if ( newData.getPhone() != 0 )
+		student.setPhone(newData.getPhone());
+	
+	if ( newData.getEmail() != "" )
+		student.setEmail(newData.getEmail());
+	
+	if ( newData.getAddress() != "" )
+		student.setAddress(newData.getAddress());
+		
+	if ( newData.getHighestCourse() != 0 )
+		student.setHighestCourse(newData.getHighestCourse());
+		
+	if ( newData.getGroupNumber() != 0 )
+		student.setGroupNumber(newData.getGroupNumber());
+		
+	if ( newData.getBirthAtUnix() != 0 )
+		student.setBirthAt(newData.getBirthAtUnix());
+			
+	this->addStudent(student);
+	
+	return SUCCESS;
+}
