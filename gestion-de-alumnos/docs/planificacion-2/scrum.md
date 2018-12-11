@@ -63,7 +63,6 @@ Classroom::addStudent
 
 |card                  |duration|assigned to   |Finished?|
 |----------------------|:------:|--------------|---------|
-
 |CLI                   |5       |Juan Pedro    | no      |
 |DB Wrapper            |8       |Diego         | kind of |
 |Classrom Class        |3       |Diego         | yes     |
