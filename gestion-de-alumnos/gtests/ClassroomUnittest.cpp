@@ -192,17 +192,17 @@ TEST(Classroom,searchStudent){
 	s3.setId("");
 	s3.setName("");
 	s3.setLastName("");
-  std::vector<Student> students;
-  EXPECT_EQ(classroom.searchStudent(s1,students),203);
-  EXPECT_EQ(classroom.searchStudent(s3,students),203);
-  classroom.addStudent(s1);
+	std::vector<Student> students;
+	EXPECT_EQ(classroom.searchStudent(s1,students), CLASSROOM_EMPTY);
+	EXPECT_EQ(classroom.searchStudent(s3,students), CLASSROOM_EMPTY);
+	classroom.addStudent(s1);
 	classroom.addStudent(s2);
 
-  Classroom newClass;
-  Student s4;
+	Classroom newClass;
+	Student s4;
 	s4.setId("999");
 	s4.setName("Julio");
 	s4.setLastName("Verne");
-  newClass.addStudent(s4);
-	EXPECT_EQ(newClass.searchStudent(s4,students),0);
+	newClass.addStudent(s4);
+	EXPECT_EQ(newClass.searchStudent(s4,students), SUCCESS);
 }
