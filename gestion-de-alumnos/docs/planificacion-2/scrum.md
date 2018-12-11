@@ -111,6 +111,7 @@ None
 
 |card                    |duration|assigned to   |Finished?|
 |------------------------|:------:|--------------|---------|
+|CLI                     |5       |Juan Pedro    | no      |
 |Classroom::exportStudent|8       | Diego        | no      |
 |Classroom::deleteStudent|2       | Diego        | yes     |
 |Teacher Class           |1       | ?            | ?       |
