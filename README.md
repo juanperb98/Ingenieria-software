@@ -12,7 +12,6 @@
 
 
 # editor configuration
-The same as in the Linux kernel:
 - indentation: tabs
 - tabs: 8 units
 - max line length: 80 units
