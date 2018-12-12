@@ -20,6 +20,8 @@
 #include <ctime>
 #include <string>
 
+#include <iostream>
+
 class Student{
 	private:
 		std::string _id = "";
@@ -34,6 +36,11 @@ class Student{
 		bool _isLeader = false;
 
 	public:
+		Student(std::string id);
+		Student();
+		Student(Student const &student);
+		
+		
 		int setId(std::string id);
 		std::string getId()const;
 
@@ -61,7 +68,7 @@ class Student{
 		int setBirthAt(tm birthAt);
 		// overloaded function for unix time
 		int setBirthAt(time_t birthAt);
-		tm getBirthAt();
+		tm getBirthAt()const;
 		// returns in unix's time
 		time_t getBirthAtUnix()const;
 

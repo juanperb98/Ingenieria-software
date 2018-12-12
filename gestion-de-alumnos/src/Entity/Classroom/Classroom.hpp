@@ -21,6 +21,8 @@
 #include <ctime>
 #include <string>
 
+#define MAX_STUDENTS 150
+
 class Classroom{
 	private:
 
@@ -29,6 +31,7 @@ class Classroom{
 
 	public:
 		int addStudent(Student student);
+		int __addStudent(Student student);
 		int deleteStudent(Student student);
 		std::vector<Student> getStudents();
 		int searchStudent(Student & student,

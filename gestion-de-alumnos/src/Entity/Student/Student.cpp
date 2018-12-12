@@ -12,6 +12,23 @@
 
 #include "Student.hpp"
 
+Student::Student(std::string id): _id(id){}
+
+Student::Student(){}
+
+Student::Student(Student const &student){
+	this->setId( student.getId() );
+	this->setName( student.getName() );
+	this->setLastName( student.getLastName() );
+	this->setPhone(student.getPhone() );
+	this->setEmail( student.getEmail() );
+	this->setAddress( student.getAddress() );
+	this->setHighestCourse( student.getHighestCourse() );
+	this->setGroupNumber( student.getGroupNumber() );
+	this->setBirthAt( student.getBirthAt() );
+	this->setIsLeader( student.getIsLeader() );
+}
+
 
 int Student::setId(std::string id){
 	this->_id = id;
@@ -20,7 +37,7 @@ int Student::setId(std::string id){
 
 std::string Student::getId()const{
 	return _id;
-};
+}
 
 int Student::setName(std::string name){
 	this->_name = name;
@@ -29,7 +46,7 @@ int Student::setName(std::string name){
 
 std::string Student::getName()const{
 	return _name;
-};
+}
 
 int Student::setLastName(std::string lastName){
 	this->_lastName = lastName;
@@ -38,7 +55,7 @@ int Student::setLastName(std::string lastName){
 
 std::string Student::getLastName()const{
 	return _lastName;
-};
+}
 
 int Student::setPhone(int phone){
 	if ( unlikely(phone < 100000000) )
@@ -50,7 +67,7 @@ int Student::setPhone(int phone){
 
 int Student::getPhone()const {
 	return _phone;
-};
+}
 
 int Student::setEmail(std::string email){
 	/* Reget to check if the email is semanticly valid
@@ -73,7 +90,7 @@ int Student::setEmail(std::string email){
 
 std::string Student::getEmail()const{
 	return _email;
-};
+}
 
 int Student::setAddress(std::string address){
 	this->_address = address;
@@ -92,7 +109,7 @@ int Student::setHighestCourse(unsigned short int highestCourse){
 
 unsigned short int Student::getHighestCourse()const{
 	return _highestCourse;
-};
+}
 
 
 int Student::setGroupNumber(unsigned int groupNumber){
@@ -102,7 +119,7 @@ int Student::setGroupNumber(unsigned int groupNumber){
 
 unsigned int Student::getGroupNumber()const{
 	return _groupNumber;
-};
+}
 
 
 int Student::setBirthAt(tm birthAt){
@@ -126,7 +143,7 @@ int Student::setBirthAt(time_t birthAt){
 	return SUCCESS;
 }
 
-tm Student::getBirthAt(){
+tm Student::getBirthAt()const{
 	// convets from unix time to tm struct and returns it
 	return *localtime(&this->_birthAt);
 }
@@ -142,4 +159,4 @@ int Student::setIsLeader(bool isLeader){
 
 bool Student::getIsLeader()const {
 	return _isLeader;
-};
+}

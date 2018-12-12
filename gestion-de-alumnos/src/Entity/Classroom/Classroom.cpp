@@ -15,11 +15,19 @@ std::vector<Student> Classroom::getStudents(){
 
 }
 
-int Classroom::addStudent(Student student){
+int Classroom::addStudent(Student student){		
 	for (size_t i = 0; i < getStudents().size(); i++) {
 		if ( unlikely(student.getId()==students_[i].getId()) )
 			return CLASSROOM_DUPLICATED_STUDENT;
 	}
+
+	return __addStudent(student);
+}
+
+int Classroom::__addStudent(Student student){
+	if ( this->getStudents().size() >= 150 )
+		return CLASSROOM_FULL;
+		
 	students_.push_back(student);
 
 	return SUCCESS;
