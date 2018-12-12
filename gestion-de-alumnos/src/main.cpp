@@ -1,7 +1,7 @@
 #include <stdio.h>
 #include <iostream>
-#include "Entity/Classroom/Classroom.hpp"
-#include "Entity/Student/Student.hpp"
+#include "Classroom.hpp"
+#include "Student.hpp"
 int main ()
 {
 	Classroom classroom;
