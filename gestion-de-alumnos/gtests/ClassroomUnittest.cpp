@@ -345,7 +345,7 @@ TEST(Classroom, simpleModifyStudent){
 TEST(Classroom, MaxLimit){
 	Classroom classroom;
 	for (size_t i = 0; i < 150; i++) {
-		if( i%10 == 0 	){
+		if( i%20 == 0 	){
 			std::cout <<(int)((float)i/200*100)<<"%, ";
 			std::fflush(stdout);
 		}
@@ -353,7 +353,7 @@ TEST(Classroom, MaxLimit){
 	}
 	
 	for (size_t i = 150; i <= 200; i++) {
-		if( i%10 == 0 	){
+		if( i%20 == 0 	){
 			std::cout <<(int)((float)i/200*100)<<"%, ";
 			std::fflush(stdout);
 		}

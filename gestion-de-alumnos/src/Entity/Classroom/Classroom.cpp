@@ -25,7 +25,7 @@ int Classroom::addStudent(Student const & student){
 }
 
 int Classroom::__addStudent(Student const & student){
-	if ( this->getStudents().size() >= 150 )
+	if ( unlikely(this->getStudents().size() >= 150) )
 		return CLASSROOM_FULL;
 		
 	students_.push_back(student);
@@ -57,7 +57,7 @@ int Classroom::searchStudent(Student const & student,
 	std::vector<Student>::iterator studentIterator;
 	std::string regexPattern;
 	
-	if ( students.size() == 0 )
+	if ( unlikely(students.size() == 0) )
 		return CLASSROOM_EMPTY;
 	
 	for ( studentIterator = students.begin(); studentIterator != students.end(); studentIterator++ ){
@@ -73,15 +73,15 @@ int Classroom::searchStudent(Student const & student,
 		
 		// if field is defined and not match, erase it
 		if ( student.getId() != "" 
-		&& ( !std::regex_match(studentIterator->getId(), idRegex)) )
+		&& ( unlikely(!std::regex_match(studentIterator->getId(), idRegex))) )
 			students.erase(studentIterator);
 		
 		if ( student.getName() != "" 
-		&& ( !std::regex_match(studentIterator->getName(), nameRegex)) )
+		&& ( unlikely(!std::regex_match(studentIterator->getName(), nameRegex))) )
 			students.erase(studentIterator);
 			
 		if ( student.getLastName() != "" 
-		&& ( !std::regex_match(studentIterator->getLastName(), lastNameRegex)) )
+		&& ( unlikely(!std::regex_match(studentIterator->getLastName(), lastNameRegex))) )
 			students.erase(studentIterator);
 	}
 	
