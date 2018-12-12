@@ -336,3 +336,29 @@ TEST(Classroom, simpleModifyStudent){
 	EXPECT_EQ(students[0].getBirthAtUnix(), s3.getBirthAtUnix());
 	EXPECT_EQ(students[0].getIsLeader(), s2.getIsLeader());
 }
+
+
+
+
+
+
+TEST(Classroom, MaxLimit){
+	Classroom classroom;
+	for (size_t i = 0; i < 150; i++) {
+		if( i%10 == 0 	){
+			std::cout <<(int)((float)i/200*100)<<"%, ";
+			std::fflush(stdout);
+		}
+		EXPECT_EQ(classroom.__addStudent(Student(std::to_string(i))),SUCCESS);
+	}
+	
+	for (size_t i = 150; i <= 200; i++) {
+		if( i%10 == 0 	){
+			std::cout <<(int)((float)i/200*100)<<"%, ";
+			std::fflush(stdout);
+		}
+
+		EXPECT_EQ(classroom.__addStudent(Student(std::to_string(i))),CLASSROOM_FULL);
+	}
+	std::cout <<'\n';
+}
