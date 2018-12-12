@@ -16,7 +16,7 @@ Student::Student(std::string id): _id(id){}
 
 Student::Student(){}
 
-Student::Student(Student const &student){
+Student::Student(Student const & student){
 	this->setId( student.getId() );
 	this->setName( student.getName() );
 	this->setLastName( student.getLastName() );

@@ -38,7 +38,7 @@ class Student{
 	public:
 		Student(std::string id);
 		Student();
-		Student(Student const &student);
+		Student(Student const & student);
 		
 		
 		int setId(std::string id);
