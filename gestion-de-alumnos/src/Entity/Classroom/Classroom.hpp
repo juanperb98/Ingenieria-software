@@ -31,7 +31,20 @@ class Classroom{
 		int addStudent(Student student);
 		int deleteStudent(Student student);
 		std::vector<Student> getStudents();
-		int searchStudent( Student & student,std::vector<Student> &students);
+		int searchStudent(Student & student,
+				  std::vector<Student> &students);
+		
+		/* Warning! the leader value is always set!!!
+		 * If you want to not modify it use the function
+		 * simpleModifyStudent function
+		 */
+	 	int modifyStudent(Student target, Student newData);
+		
+		/* This funciton does not overwrite the is selected
+		 * variable, if you want to modify it use the 
+		 * modifyStudent function
+		 */
+		int simpleModifyStudent(Student target, Student newData);
 };
 
 #endif
