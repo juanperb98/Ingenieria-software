@@ -16,7 +16,7 @@ class Teacher{
         inline int setRol(std::string rol);
         inline std::string getRol()const;
         inline Classroom & getClassrooom();
-	void setClassrooom(Classroom & classroom);
+	void getClassroom(Classroom & classroom);
         int loadClassroom(std::string filePath);
         int saveClassroom(std::string filePath);
 };

@@ -14,7 +14,7 @@ int Teacher::setRol(std::string rol){
 std::string Teacher::getRol()const{
         return rol_;
 }
-Classroom & Teacher::getClassrooom(){
+Classroom & Teacher::getClassroom(){
         return classroom_;
 }
 void Teacher::setClassrooom(Classroom & classroom){
