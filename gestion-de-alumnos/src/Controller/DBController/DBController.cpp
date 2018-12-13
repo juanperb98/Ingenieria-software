@@ -20,6 +20,7 @@ int DBController::save(Classroom classroom){
 	
 	// checks if file exist
 	std::ifstream testFile;
+	testFile.open(this->getPath());
 	if ( testFile.is_open() )
 		return DBCONTROLLER_FILE_EXISTS;
 	
