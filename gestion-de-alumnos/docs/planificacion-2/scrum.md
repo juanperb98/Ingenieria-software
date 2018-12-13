@@ -116,7 +116,7 @@ units per sprint: 16
 |Classroom::ModifyStudent|1       | Diego        | yes     |
 |Classroom::ShowStudents |2       | Diego        | yes     |
 ## metrics
-units per sprint: 22
+units per sprint: 32
 
 [release](https://github.com/juanperb98/Ingenieria-software/releases/tag/v0.4-alpha)
 

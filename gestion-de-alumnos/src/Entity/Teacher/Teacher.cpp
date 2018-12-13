@@ -14,8 +14,11 @@ int Teacher::setRol(std::string rol){
 std::string Teacher::getRol()const{
         return rol_;
 }
-Classroom Teacher::getClassrooom(){
+Classroom & Teacher::getClassrooom(){
         return classroom_;
+}
+void Teacher::setClassrooom(Classroom & classroom){
+	classroom_=classroom;
 }
 int Teacher::loadClassroom(std::string filePath){
         DBController databaseController(filePath);
