@@ -30,11 +30,11 @@ int mostrarMenu()
 				  << "** 5. Exportar información del alumno      ***\n"
 				  << "** 6. Exportar copias de seguridad         ***\n"
 				  << "** 7. Importar copias de seguridad         ***\n"
-				  << "** 8. Mostrar  Alumno/s                     ***\n"
+				  << "** 8. Mostrar  Alumno/s                    ***\n"
 				  << "**********************************************\n"
 				  << "** 0. Salir                                ***\n"
 				  << "**********************************************\n";
-				 
+				  
 		std::cin >> opcion;
 		std::cin.ignore();
 		
@@ -51,95 +51,50 @@ int mostrarMenu()
 }
 
 
-int menu(Classroom &classroom)
+int menu(Teacher & teacher)
 {
 	int opcion = 0;
 	int posicion = 0;
-
+	
 	while ( (opcion = mostrarMenu()) != 0)
 	{	
 		switch(opcion) {				
 			case 1:
 				// añadir alumno
-				if(!addStudent(classroom)){
-					std::cout << "Alumno añadido" << std::endl;
-				}
+				addStudent(teacher.getClassroom());
 				break;
+				
+			case 2:
+				searchStudent(teacher.getClassroom());		
+				break;
+			
+			case 3:
+				modifyStudent(teacher.getClassroom());
+				break;
+				
 			case 4:
-				if(deleteStudent(classroom) == SUCCESS) 
-				{
-					std::cout << "Alumno eliminado" << std::endl;
-				}
+				deleteStudent(teacher.getClassroom());
 				break;
+				
+			case 5:
+				exportInformation(teacher.getClassroom());
+				break;
+				
+			case 6:
+				break;
+				
+			case 7:
+				break;
+				
+			case 8:
+				showStudent(teacher.getClassroom());		
+				break;
+		
 			
 		}
 	}
 
-	/*PLACE(1,10);
-	std::cout << BIBLUE;
-	std::cout << "Programa principial | Opciones del menú";
-	std::cout << RESET;
-
-	//////////////////////////////////////////////////////////////////////////////
-	posicion++;
-
-	PLACE(posicion++,10);
-	std::cout <<  "[1] Añadir Alumno";
-
-	//////////////////////////////////////////////////////////////////////////////
-	posicion++;
-
-	PLACE(posicion++,10);
-	std::cout << "[2] Buscar alumno";
-
-	PLACE(posicion++,10);
-	std::cout << "[3] Modificar alumno";
-
-	//////////////////////////////////////////////////////////////////////////////
-	posicion++;
- 
-	PLACE(posicion++,10);
-	std::cout << "[4] Borrar alumno";
-
-	PLACE(posicion++,10);
-	std::cout <<  "[5] Exportar información del alumno";
-
-	PLACE(posicion++,10);
-	std::cout << "[6] Exportar copias de seguridad";
-
-	PLACE(posicion++,10);
-	std::cout << "[7] Importar copias de seguridad";
-
-	//////////////////////////////////////////////////////////////////////////////
-	posicion++;
-
-	PLACE(posicion++,10);
-	std::cout << "[8] Monstrar alumno/os";
-
-
-	//////////////////////////////////////////////////////////////////////////////
-	posicion++;
-
-	PLACE(posicion++,10);
-	std::cout << BIRED << "[0] Salir";
-
-	//////////////////////////////////////////////////////////////////////////////
-	posicion++;
-
-	PLACE(posicion++,10);
-	std::cout << BIGREEN;
-	std::cout << "Opción: ";
-	std::cout << RESET;
-
-	// Se lee el número de opción
-	std::cin >> opcion;
-
-    // Se elimina el salto de línea del flujo de entrada
-    std::cin.ignore();
-
-	return opcion;*/
 }
-
 
 //////////////////////////////////////////////////////////////////////////////
 
@@ -147,25 +102,96 @@ int addStudent(Classroom &classroom)
 {
 	std::cout << "Introduce los datos para el nuevo alumno: "  << std::endl;
 	Student s1;
-	time_t date = time(nullptr);
-	
+	char aux[255];
 	
 	std::string id = "";
 	int leader = 0;
 	
 	std::cout << "DNI: ";
-	std::cin >> id;
-	std::cin.ignore();
+	std::cin.getline(aux,255);
+	id=aux;
 	s1.setId(id);
 	
-	s1.setName("pepe");
-	s1.setLastName("perez");
-	s1.setPhone(689111111);
-	s1.setEmail("pepe@uco.es");
-	s1.setAddress("calle de pepe");
-	s1.setHighestCourse(3);
-	s1.setGroupNumber(4);
-	s1.setBirthAt(date);
+	std::string name = "";
+	std::cout << "Nombre: ";
+	std::cin.getline(aux,255);
+	name=aux;
+	s1.setName(name);
+	
+	std::string apellido = "";
+	std::cout << "Apellidos: ";
+	std::cin.getline(aux,255);
+	apellido=aux;
+	s1.setLastName(apellido);
+	
+	int phone = 0;
+	std::cout << "Teléfono: ";
+	std::cin.getline(aux,255);
+	phone=atoi(aux);
+	while ( s1.setPhone(phone) ){
+		std::cout << "Teléfono invalido, introduzca otro\n";
+		std::cout << "Teléfono: ";
+		std::cin.getline(aux,255);
+		phone=atoi(aux);
+	}
+	
+	std::string email = "";
+	std::cout << "Email: ";
+	std::cin.getline(aux,255);
+	email=aux;
+
+	while (s1.setEmail(email) ){
+		std::cout << "Correo invalido, introduzca otro\n";
+		std::cout << "Email: ";
+		std::cin.getline(aux,255);
+		email=aux;
+	}
+	
+	
+	std::string calle = "";
+	std::cout << "Dirección: ";
+	std::cin.getline(aux,255);
+	calle=aux;
+	s1.setAddress(calle);
+
+	
+	int curso = 0;
+	std::cout << "Curso mas alto: ";
+	std::cin.getline(aux,255);
+	curso=atoi(aux);
+	s1.setHighestCourse(curso);
+	
+	
+	int grupo = 0;
+	std::cout << "Numero de grupo: ";
+	std::cin.getline(aux,255);
+	grupo=atoi(aux);
+	s1.setGroupNumber(grupo);
+	
+	tm date;
+	std::cout << "Año: ";
+	std::cin.getline(aux,255);
+	date.tm_year=atoi(aux);
+	std::cout << "Mes ";
+	std::cin.getline(aux,255);
+	date.tm_mon=atoi(aux);
+	std::cout << "Dia ";
+	std::cin.getline(aux,255);
+	date.tm_mday=atoi(aux);
+	while (s1.setBirthAt(date) ){
+		std::cout << "Fecha invalida, introduzca otra\n";
+		std::cout << "Año: ";
+		std::cin.getline(aux,255);
+		date.tm_year=atoi(aux);
+		std::cout << "Mes ";
+		std::cin.getline(aux,255);
+		date.tm_mon=atoi(aux);
+		std::cout << "Dia ";
+		std::cin.getline(aux,255);
+		date.tm_mday=atoi(aux);
+	
+	}
+	
 	
 	std::cin >> leader;
 	if (leader != 0)
@@ -178,7 +204,7 @@ int addStudent(Classroom &classroom)
 
 //////////////////////////////////////////////////////////////////////////////
 
-void searchStudent()
+void searchStudent(Classroom &classroom)
 {
 	 std::cout << "SE DEBE COMPLETAR EL CÓDIGO DE ESTA FUNCIÓN " << std::endl;
 
@@ -240,7 +266,7 @@ int deleteStudent(Classroom &classroom)
 
 
 //
-void exportInformation()
+void exportInformation(Classroom &classroom)
 {
 	std::cout << "SE DEBE COMPLETAR EL CÓDIGO DE ESTA FUNCIÓN " << std::endl;
 
@@ -249,7 +275,7 @@ void exportInformation()
 
 
 ////////////////////////////////////////////////////////////////////////
-void exportBackups()
+void exportBackups(Teacher & teacher)
 {
 
 std::cout << "SE DEBE COMPLETAR EL CÓDIGO DE ESTA FUNCIÓN " << std::endl;
@@ -259,7 +285,7 @@ std::cout << "SE DEBE COMPLETAR EL CÓDIGO DE ESTA FUNCIÓN " << std::endl;
 }
 
 
-void importBackups()
+void importBackups(Teacher & teacher)
 {
 	std::cout << "SE DEBE COMPLETAR EL CÓDIGO DE ESTA FUNCIÓN " << std::endl;
 
@@ -267,7 +293,7 @@ void importBackups()
 }
 
 
-void showStudent()
+void showStudent(Classroom &classroom)
 {
 	std::cout << "SE DEBE COMPLETAR EL CÓDIGO DE ESTA FUNCIÓN " << std::endl;
 

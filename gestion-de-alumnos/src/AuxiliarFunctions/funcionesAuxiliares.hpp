@@ -12,9 +12,13 @@
 #include <string>
 #include <stdlib.h>
 #include <iostream>
+#include "Teacher.hpp"
 
 
-  	int menu(Classroom &classroom);
+	
+
+
+  	int menu(Teacher & teacher);
   	int mostrarMenu();
 
 	///////////////////////////////////////////////////////////////////
@@ -25,10 +29,10 @@
 	///////////////////////////////////////////////////////////////////
 
 
-	void searchStudent();
+	void searchStudent(Classroom &classroom);
 
 
-	void modificateStudent();
+	void modifyStudent(Classroom &classroom);
 
 	///////////////////////////////////////////////////////////////////
 
@@ -36,21 +40,21 @@
 	int deleteStudent(Classroom &classroom);
 
 
-	void exportInformation();
+	void exportInformation(Classroom &classroom);
 
 	///////////////////////////////////////////////////////////////////
 
 
-	void exportBackups();
+	void exportBackups(Teacher & teacher);
 
 
-	void importBackups();
+	void importBackups(Teacher & teacher);
 
 
 	///////////////////////////////////////////////////////////////////
 
 
-	void showStudent();
+	void showStudent(Classroom &classroom);
 
 
 

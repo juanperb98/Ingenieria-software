@@ -4,18 +4,21 @@
 #include "DBController.hpp"
 #include "Classroom.hpp"
 #include <iostream>
+#include <string>
 class Teacher{
         private:
-        std::string nombre_;
+        std::string name_;
         std::string dni_;
         std::string rol_;
-        Classroom & classroom_;
+        Classroom classroom_;
         public:
-        inline int setDni(std::string dni);
-        inline std::string getDni()const;
-        inline int setRol(std::string rol);
-        inline std::string getRol()const;
-        inline Classroom & getClassroom();
+         int setDni(std::string dni);
+         std::string getDni()const;
+         int setName(std::string dni);
+         std::string getName()const;
+         int setRol(std::string rol);
+         std::string getRol()const;
+         Classroom & getClassroom();
 	void setClassroom(Classroom & classroom);
         int loadClassroom(std::string filePath);
         int saveClassroom(std::string filePath);
