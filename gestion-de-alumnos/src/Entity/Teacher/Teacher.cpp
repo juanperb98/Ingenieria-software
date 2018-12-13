@@ -1,4 +1,4 @@
-#include "Teacher.h"
+#include "Teacher.hpp"
 
 int Teacher::setDni(std::string dni){
         dni_ = dni;
