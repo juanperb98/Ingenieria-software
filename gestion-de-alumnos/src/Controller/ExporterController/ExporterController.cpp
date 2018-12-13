@@ -22,7 +22,7 @@ int ExporterController::exportStudent(Student const & student)const{
 		
 	// checks if file exist
 	std::ifstream testFile;
-	std::string path = this->getBasePath() + "/" + student.getId();
+	std::string path = this->getBasePath() + "/" + student.getId() + ".html";
 	
 	
 	testFile.open( path );
@@ -80,7 +80,7 @@ int ExporterController::clear(Student const & student)const{
 	if ( getBasePath() == "" )
 		return EXPORTERCONTROLLER_INVALID_PATH;
 		
-	std::string path = this->getBasePath() + "/" + student.getId();
+	std::string path = this->getBasePath() + "/" + student.getId() + ".html";	
 	
 	if ( remove(path.c_str()) != 0 )
 		return EXPORTERCONTROLLER_FILE_NOT_EXISTS;
