@@ -15,8 +15,8 @@ class Teacher{
         inline std::string getDni()const;
         inline int setRol(std::string rol);
         inline std::string getRol()const;
-        inline Classroom & getClassrooom();
-	void getClassroom(Classroom & classroom);
+        inline Classroom & getClassroom();
+	void setClassroom(Classroom & classroom);
         int loadClassroom(std::string filePath);
         int saveClassroom(std::string filePath);
 };

@@ -17,7 +17,7 @@ std::string Teacher::getRol()const{
 Classroom & Teacher::getClassroom(){
         return classroom_;
 }
-void Teacher::setClassrooom(Classroom & classroom){
+void Teacher::setClassroom(Classroom & classroom){
 	classroom_=classroom;
 }
 int Teacher::loadClassroom(std::string filePath){
