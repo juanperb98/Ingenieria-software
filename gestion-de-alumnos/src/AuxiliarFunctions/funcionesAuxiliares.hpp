@@ -54,7 +54,7 @@
 	///////////////////////////////////////////////////////////////////
 
 
-	void showStudent(Classroom &classroom);
+	void showStudent(Student student);
 
 
 

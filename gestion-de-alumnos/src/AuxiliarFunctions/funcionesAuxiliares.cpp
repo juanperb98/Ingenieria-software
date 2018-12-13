@@ -87,7 +87,7 @@ int menu(Teacher & teacher)
 				break;
 				
 			case 8:
-				showStudent(teacher.getClassroom());		
+						
 				break;
 		
 			
@@ -182,13 +182,13 @@ int addStudent(Classroom &classroom)
 		std::cout << "Fecha invalida, introduzca otra\n";
 		std::cout << "Año: ";
 		std::cin.getline(aux,255);
-		date.tm_year=atoi(aux);
+		date.tm_year=(atoi(aux)-1);
 		std::cout << "Mes ";
 		std::cin.getline(aux,255);
-		date.tm_mon=atoi(aux);
+		date.tm_mon=(atoi(aux)-1);
 		std::cout << "Dia ";
 		std::cin.getline(aux,255);
-		date.tm_mday=atoi(aux);
+		date.tm_mday=(atoi(aux)-1);
 	
 	}
 	
@@ -206,7 +206,40 @@ int addStudent(Classroom &classroom)
 
 void searchStudent(Classroom &classroom)
 {
-	 std::cout << "SE DEBE COMPLETAR EL CÓDIGO DE ESTA FUNCIÓN " << std::endl;
+	std::cout << "Introduzca los campos a aplicar la busqueda, is no desea aplicar filtro a un parametro, no lo rellene (presiona intro)" << std::endl;
+	
+	std::vector<Student> students;
+	Student s1;
+	char aux[255];
+	
+	std::string id = "";
+	int leader = 0;
+	
+	std::cout << "DNI: ";
+	std::cin.getline(aux,255);
+	id=aux;
+	s1.setId(id);
+	
+	std::string name = "";
+	std::cout << "Nombre: ";
+	std::cin.getline(aux,255);
+	name=aux;
+	s1.setName(name);
+	
+	std::string apellido = "";
+	std::cout << "Apellidos: ";
+	std::cin.getline(aux,255);
+	apellido=aux;
+	s1.setLastName(apellido);
+	
+	if (classroom.searchStudent(s1, students)){
+		std::cout << "ERROR!" << '\n';
+	}
+	
+	for (size_t i = 0; i<students.size();i++){
+		showStudent(students[i]);
+	}
+	std::cin.getline(aux,255);
 
 	return;
 }
@@ -225,7 +258,7 @@ void modifyStudent(Classroom &classroom)
 	std::cin >> nombre;
 	std::cin.ignore();
 	newStudent.setName(nombre);
-	
+	std::cin.ignore();
 	
 
 }
@@ -293,10 +326,23 @@ void importBackups(Teacher & teacher)
 }
 
 
-void showStudent(Classroom &classroom)
+void showStudent(Student student)
 {
-	std::cout << "SE DEBE COMPLETAR EL CÓDIGO DE ESTA FUNCIÓN " << std::endl;
-
+	std::cout<<"DNI: "<<student.getId()<<"\n"
+	<<"Nombre: "<<student.getName()<<"\n"
+	<<"Apellidos: "<<student.getLastName()<<"\n"
+	<<"Teléfono: "<<student.getPhone()<<"\n"
+	<<"Email: "<<student.getEmail()<<"\n"
+	<<"Direccion: "<<student.getAddress()<<"\n"
+	<<"Mayor curso matriculado: "
+		<<student.getHighestCourse()<<"\n"
+	<<"Grupo: "<<student.getGroupNumber()<<"\n"
+	<<"Fecha de Nacimiento: "
+		<<student.getBirthAt().tm_mday<<"-"
+		<<student.getBirthAt().tm_mon<<"-"
+		<<student.getBirthAt().tm_year<<"\n"
+	<<"Es Lider? "<<(student.getIsLeader()==true ? "Si":"No")<<"\n";
+	
 	return;
 }
 

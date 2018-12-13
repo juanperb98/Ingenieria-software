@@ -59,7 +59,7 @@ int ExporterController::exportStudent(Student const & student)const{
 		<<"<li>Fecha de Nacimiento: "
 			<<student.getBirthAt().tm_mday
 			<<"-"
-			<<student.getBirthAt().tm_mon+1
+			<<student.getBirthAt().tm_mon
 			<<"-"\
 			<<student.getBirthAt().tm_year
 		<<"</li>\n"
