@@ -109,10 +109,10 @@ units per sprint: 16
 
 |card                    |duration|assigned to   |Finished?|
 |------------------------|:------:|--------------|---------|
-|CLI                     |20      | Juan Pedro   | yes     |
+|CLI                     |20      | Juan Pedro   | ?       |
 |Exporter Class          |8       | Diego        | yes     |
 |Classroom::deleteStudent|2       | Diego        | yes     |
-|Teacher Class           |1       | Diego        | yes     |
+|Teacher Class           |1       | Héctor       | yes     |
 |Classroom::ModifyStudent|1       | Diego        | yes     |
 |Classroom::ShowStudents |2       | Diego        | yes     |
 ## metrics
