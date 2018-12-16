@@ -95,7 +95,7 @@ units per sprint: 16
 
 [release](https://github.com/juanperb98/Ingenieria-software/releases/tag/v0.3-alpha)
 
-# sprint 4 (10/12/18) - (12/12/18)
+# sprint 4 (10/12/18) - (16/12/18)
 
 ## planned cards:
 - Classroom::exportStudent
@@ -119,57 +119,3 @@ units per sprint: 16
 units per sprint: 32
 
 [release](https://github.com/juanperb98/Ingenieria-software/releases/tag/v0.4-alpha)
-
-
-<!-- 
-
-# sprint 5 (13/12/18) - (16/12/18)
-
-## planned cards:
-
-## extra cards:
-None
-
-## table
-
-|card           |duration|assigned to   |Finished?|
-|---------------|:------:|--------------|---------|
-
-## metrics
-units per sprint: 
-
-
-
-# sprint 6 (17/12/18) - (19/12/18)
-
-## planned cards:
-
-## extra cards:
-None
-
-## table
-
-|card           |duration|assigned to   |Finished?|
-|---------------|:------:|--------------|---------|
-
-## metrics
-units per sprint: 
-
-
-
-# sprint 7 (20/12/18) - (23/12/18)
-
-## planned cards:
-
-## extra cards:
-None
-
-## table
-
-|card           |duration|assigned to   |Finished?|
-|---------------|:------:|--------------|---------|
-
-## metrics
-units per sprint: 
-
- -->
