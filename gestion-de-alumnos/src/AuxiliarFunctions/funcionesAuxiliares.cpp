@@ -30,7 +30,6 @@ int mostrarMenu()
 				  << "** 5. Exportar información del alumno      ***\n"
 				  << "** 6. Exportar copias de seguridad         ***\n"
 				  << "** 7. Importar copias de seguridad         ***\n"
-				  << "** 8. Mostrar  Alumno/s                    ***\n"
 				  << "**********************************************\n"
 				  << "** 0. Salir                                ***\n"
 				  << "**********************************************\n";
@@ -81,16 +80,12 @@ int menu(Teacher & teacher)
 				break;
 				
 			case 6:
+				exportBackup(teacher);
 				break;
 				
 			case 7:
-				break;
-				
-			case 8:
-						
-				break;
-		
-			
+				importBackup(teacher);
+				break;			
 		}
 	}
 
@@ -105,7 +100,6 @@ int addStudent(Classroom &classroom)
 	char aux[255];
 	
 	std::string id = "";
-	int leader = 0;
 	
 	std::cout << "DNI: ";
 	std::cin.getline(aux,255);
@@ -192,9 +186,10 @@ int addStudent(Classroom &classroom)
 	
 	}
 	
-	
+	std::cout << "es lider? [si,no]" << '\n';
+	std::string leader;
 	std::cin >> leader;
-	if (leader != 0)
+	if (leader == "si")
 		s1.setIsLeader(true);
 	else
 		s1.setIsLeader(false);
@@ -246,84 +241,282 @@ void searchStudent(Classroom &classroom)
 
 void modifyStudent(Classroom &classroom)
 {
-	Student oldStudent, newStudent;
-	std::string nombre, dni;
+	std::cout << "Introduzca los campos a aplicar la busqueda, is no desea aplicar filtro a un parametro, no lo rellene (presiona intro)" << std::endl;
 	
-	std::cout << "Id de alumno para modificar: " << std::endl;
-	std::cin >> dni;
-	std::cin.ignore();
-	oldStudent.setId(dni);
+	std::vector<Student> students;
+	Student s1;
+	char aux[255];
+	
+	std::string id = "";
+	int leader = 0;
 	
 	std::cout << "DNI: ";
-	std::cin >> nombre;
-	std::cin.ignore();
-	newStudent.setName(nombre);
-	std::cin.ignore();
+	std::cin.getline(aux,255);
+	id=aux;
+	s1.setId(id);
+	
+	std::string name = "";
+	std::cout << "Nombre: ";
+	std::cin.getline(aux,255);
+	name=aux;
+	s1.setName(name);
+	
+	std::string apellido = "";
+	std::cout << "Apellidos: ";
+	std::cin.getline(aux,255);
+	apellido=aux;
+	s1.setLastName(apellido);
+	
+	if (classroom.searchStudent(s1, students)){
+		std::cout << "ERROR!" << '\n';
+	}
+	
+	for (size_t i = 0; i<students.size();i++){
+		std::cout <<i<<") "<<students[i].getId()<<", "<<students[i].getName()<<", "<<students[i].getLastName()<<"\n";
+	}
+	std::cout << "introdizca el alumno a modificar: " << '\n';
+	std::cin.getline(aux,255);
+	Student student = students[atoi(aux)];
+	
+	
+	
+	
+	
+	
+	
+	std::cout << "introduzca los nuevos datos:" << '\n';
+	
+	
+	Student newdata;
+	
+	
+	std::cout << "DNI: ";
+	std::cin.getline(aux,255);
+	id=aux;
+	newdata.setId(id);
+	
+	std::cout << "Nombre: ";
+	std::cin.getline(aux,255);
+	name=aux;
+	newdata.setName(name);
+	
+	std::cout << "Apellidos: ";
+	std::cin.getline(aux,255);
+	apellido=aux;
+	newdata.setLastName(apellido);
+	
+	std::cout << "Teléfono: ";
+	std::cin.getline(aux,255);
+	int phone = atoi(aux);
+	while ( newdata.setPhone(phone) ){
+		std::cout << "Teléfono invalido, introduzca otro\n";
+		std::cout << "Teléfono: ";
+		std::cin.getline(aux,255);
+		phone=atoi(aux);
+	}
+	
+	std::cout << "Email: ";
+	std::cin.getline(aux,255);
+	std::string email=aux;
+
+	while (newdata.setEmail(email) ){
+		std::cout << "Correo invalido, introduzca otro\n";
+		std::cout << "Email: ";
+		std::cin.getline(aux,255);
+		email=aux;
+	}
+	
+	
+	std::cout << "Dirección: ";
+	std::cin.getline(aux,255);
+	std::string calle=aux;
+	newdata.setAddress(calle);
+
+	
+	std::cout << "Curso mas alto: ";
+	std::cin.getline(aux,255);
+	int curso=atoi(aux);
+	newdata.setHighestCourse(curso);
+	
+	
+	std::cout << "Numero de grupo: ";
+	std::cin.getline(aux,255);
+	int grupo=atoi(aux);
+	newdata.setGroupNumber(grupo);
+	
+	
+	tm date;
+	std::cout << "Año: ";
+	std::cin.getline(aux,255);
+	date.tm_year=atoi(aux);
+	std::cout << "Mes ";
+	std::cin.getline(aux,255);
+	date.tm_mon=atoi(aux);
+	std::cout << "Dia ";
+	std::cin.getline(aux,255);
+	date.tm_mday=atoi(aux);
+	while (newdata.setBirthAt(date) ){
+		std::cout << "Fecha invalida, introduzca otra\n";
+		std::cout << "Año: ";
+		std::cin.getline(aux,255);
+		date.tm_year=(atoi(aux)-1);
+		std::cout << "Mes ";
+		std::cin.getline(aux,255);
+		date.tm_mon=(atoi(aux)-1);
+		std::cout << "Dia ";
+		std::cin.getline(aux,255);
+		date.tm_mday=(atoi(aux)-1);
+	
+	}
+	
+	std::cout << "es lider? [si,no]" << '\n';
+	std::cin.getline(aux,255);
+	if (aux == "si")
+		newdata.setIsLeader(true);
+	else
+		newdata.setIsLeader(false);
+		
+	
+	
+	
+	
+	
+	
+	if (classroom.modifyStudent(student,newdata))
+		std::cout << "error!!" << '\n';
+	else
+		std::cout << "modificado con exito" << '\n';
+	std::cin.getline(aux,255);
+	return;
+
 	
 
 }
 
 //////////////////////////////////////////////////////////////////////
 
-int deleteStudent(Classroom &classroom)
+void deleteStudent(Classroom &classroom)
 {
-	int opcion = -1;
-	std::string apellidos = "";
-	std::string dni = "";
+	std::cout << "Introduzca los campos a aplicar la busqueda, is no desea aplicar filtro a un parametro, no lo rellene (presiona intro)" << std::endl;
 	
-	Student student;
+	std::vector<Student> students;
+	Student s1;
+	char aux[255];
 	
-	while (opcion < 0 || opcion > 1)
-	{
-		std::cout << "Pulse 1 para borrar por dni, pulse 2 para borrar por apellido: ";
-		std::cin >> opcion;
-		
-		if (opcion == 1)
-		{
-			std::cout << "Id de alumno: " << std::endl;
-			std::cin >> dni;
-			std::cin.ignore();
-			student.setId(dni);
-		}
-		else if (opcion== 0) {
-			std::cin >> apellidos;
-			std::cin.ignore();
-			student.setLastName(apellidos);
-		} else {
-		 std::cout << "Opcion incorrecta!!" << std::endl;
-		}
+	std::string id = "";
+	int leader = 0;
+	
+	std::cout << "DNI: ";
+	std::cin.getline(aux,255);
+	id=aux;
+	s1.setId(id);
+	
+	std::string name = "";
+	std::cout << "Nombre: ";
+	std::cin.getline(aux,255);
+	name=aux;
+	s1.setName(name);
+	
+	std::string apellido = "";
+	std::cout << "Apellidos: ";
+	std::cin.getline(aux,255);
+	apellido=aux;
+	s1.setLastName(apellido);
+	
+	if (classroom.searchStudent(s1, students)){
+		std::cout << "ERROR!" << '\n';
 	}
-
-	return classroom.deleteStudent(student);
+	
+	for (size_t i = 0; i<students.size();i++){
+		std::cout <<i<<") "<<students[i].getId()<<", "<<students[i].getName()<<", "<<students[i].getLastName()<<"\n";
+	}
+	std::cout << "introdizca el alumno a modificar: " << '\n';
+	std::cin.getline(aux,255);
+	Student student = students[atoi(aux)];
+	
+	
+	
+	
+	
+	if (classroom.deleteStudent(student))
+		std::cout << "error!!" << '\n';
+	else
+		std::cout << "modificado con exito" << '\n';
+	std::cin.getline(aux,255);
+	return;
 }
 
 
 //
 void exportInformation(Classroom &classroom)
 {
-	std::cout << "SE DEBE COMPLETAR EL CÓDIGO DE ESTA FUNCIÓN " << std::endl;
-
+	std::cout << "Introduzca los campos a aplicar la busqueda, is no desea aplicar filtro a un parametro, no lo rellene (presiona intro)" << std::endl;
+	
+	std::vector<Student> students;
+	Student s1;
+	char aux[255];
+	
+	std::string id = "";
+	int leader = 0;
+	
+	std::cout << "DNI: ";
+	std::cin.getline(aux,255);
+	id=aux;
+	s1.setId(id);
+	
+	std::string name = "";
+	std::cout << "Nombre: ";
+	std::cin.getline(aux,255);
+	name=aux;
+	s1.setName(name);
+	
+	std::string apellido = "";
+	std::cout << "Apellidos: ";
+	std::cin.getline(aux,255);
+	apellido=aux;
+	s1.setLastName(apellido);
+	
+	if (classroom.searchStudent(s1, students)){
+		std::cout << "ERROR!" << '\n';
+	}
+	
+	for (size_t i = 0; i<students.size();i++){
+		std::cout <<i<<") "<<students[i].getId()<<", "<<students[i].getName()<<", "<<students[i].getLastName()<<"\n";
+	}
+	std::cout << "introdizca el alumno a modificar: " << '\n';
+	std::cin.getline(aux,255);
+	Student student = students[atoi(aux)];
+	
+	
+	char path[255];
+	std::cout<<"Introduce la ruta para guardar el archivo"<<std::endl;
+	std::cin.getline(path,255);
+	
+	ExporterController exporter(path);
+	int error = exporter.exportStudent(student);
+	switch (error) {
+		case EXPORTERCONTROLLER_FILE_EXISTS:
+		{
+			
+			std::cout << "el fichero existe, quieres borrarlo? [si, no]" << '\n';
+			char option[255];
+			std::cin.getline(path,255);
+			if ( option == "si" ) {
+				exporter.clear(student);
+				exporter.exportStudent(student);
+			}
+			break;
+		}
+		default:
+			std::cout << "error: " <<error<< '\n';
+			
+	}
+	std::cout << "exportado con exito" << '\n';
+	std::cin.getline(aux,255);
 	return;
 }
-
 
 ////////////////////////////////////////////////////////////////////////
-void exportBackups(Teacher & teacher)
-{
-
-std::cout << "SE DEBE COMPLETAR EL CÓDIGO DE ESTA FUNCIÓN " << std::endl;
-
-
-	return;
-}
-
-
-void importBackups(Teacher & teacher)
-{
-	std::cout << "SE DEBE COMPLETAR EL CÓDIGO DE ESTA FUNCIÓN " << std::endl;
-
-	return;
-}
 
 
 void showStudent(Student student)
@@ -346,7 +539,54 @@ void showStudent(Student student)
 	return;
 }
 
+void exportBackup(Teacher & teacher){
+	char path[255];
+	std::cout<<"Introduce la ruta para guardar el archivo"<<std::endl;
+	std::cin.getline(path,255);
+	Classroom classroom = teacher.getClassroom();
+	DBController controlador(path);
+	int saveStatus  = controlador.save(classroom);
+	if (saveStatus ==  DBCONTROLLER_PERMISSION_DENIED ){
+		std::cout<<"Permiso denegado para escribir"<<std::endl;		
+		exportBackup(teacher);
+	}
+	else if(saveStatus ==DBCONTROLLER_INVALID_PATH){
+		std::cout<<"Ruta para el archivo incorrecta"<<std::endl;
+		exportBackup(teacher);
+	}
+	else if (saveStatus == DBCONTROLLER_FILE_EXISTS){
+		std::cout<<"El archivo existe"<<std::endl;
+		exportBackup(teacher);
+	}
+	else{
+		teacher.setClassroom(classroom);
+	}
+}
 
+void importBackup(Teacher & teacher){
+	
+	char path[255];
+	std::cout<<"Introduce la ruta para cargar el archivo"<<std::endl;
+	std::cin.getline(path,255);
+	DBController controlador(path);
+	Classroom & classroom = teacher.getClassroom();
+	int saveStatus  = controlador.load(classroom);
+	if (saveStatus == DBCONTROLLER_PERMISSION_DENIED ){
+		std::cout<<"Permiso denegado para escribir"<<std::endl;		
+		importBackup(teacher);
+	}
+	else if(saveStatus == DBCONTROLLER_INVALID_PATH){
+		std::cout<<"Ruta para el archivo incorrecta"<<std::endl;
+		importBackup(teacher);
+	}
+	else if (saveStatus == DBCONTROLLER_FILE_EXISTS){
+		std::cout<<"El archivo existe"<<std::endl;
+		importBackup(teacher);
+	}
+	else{
+		teacher.setClassroom(classroom);
+	}
+}
 
 
 

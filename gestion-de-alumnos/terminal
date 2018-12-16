@@ -1,0 +1,11 @@
+                     ___
+                   /'___\
+   __     ___ ___ /\ \__/
+ /'_ `\ /' __` __`\ \ ,__\
+/\ \L\ \/\ \/\ \/\ \ \ \_/
+\ \____ \ \_\ \_\ \_\ \_\
+ \/___L\ \/_/\/_/\/_/\/_/ 2.0
+  /\____/
+  \_/__/
+	Precompiling objects.
+make-files/Makefile:123: recipe for target 'tmp/Entity/Classroom/Classroom.o' failed

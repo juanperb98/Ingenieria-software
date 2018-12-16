@@ -13,6 +13,7 @@
 #include <stdlib.h>
 #include <iostream>
 #include "Teacher.hpp"
+#include "ExporterController.hpp"
 
 
 	
@@ -37,7 +38,7 @@
 	///////////////////////////////////////////////////////////////////
 
 
-	int deleteStudent(Classroom &classroom);
+	void deleteStudent(Classroom &classroom);
 
 
 	void exportInformation(Classroom &classroom);
@@ -45,10 +46,10 @@
 	///////////////////////////////////////////////////////////////////
 
 
-	void exportBackups(Teacher & teacher);
 
 
-	void importBackups(Teacher & teacher);
+	void importBackup(Teacher & teacher);
+	void exportBackup(Teacher & teacher);
 
 
 	///////////////////////////////////////////////////////////////////
