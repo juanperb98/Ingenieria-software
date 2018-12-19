@@ -14,6 +14,13 @@ int Teacher::setRol(std::string rol){
 std::string Teacher::getRol()const{
         return rol_;
 }
+int Teacher::setPasswd(std::string passwd){
+        passwd_ = passwd;
+        return SUCCESS;
+}
+std::string Teacher::getPasswd()const{
+        return passwd_;
+}
 int Teacher::setName(std::string rol){
         name_ = rol;
         return SUCCESS;

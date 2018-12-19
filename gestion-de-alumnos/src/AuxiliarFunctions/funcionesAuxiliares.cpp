@@ -230,9 +230,11 @@ void searchStudent(Classroom &classroom)
 	if (classroom.searchStudent(s1, students)){
 		std::cout << "ERROR!" << '\n';
 	}
+	std::cout << "\n\n\n";
 	
 	for (size_t i = 0; i<students.size();i++){
 		showStudent(students[i]);
+		std::cout << "\n\n\n";
 	}
 	std::cin.getline(aux,255);
 
@@ -540,6 +542,12 @@ void showStudent(Student student)
 }
 
 void exportBackup(Teacher & teacher){
+	if (teacher.getRol() != "coordinador" ) {
+		std::cout << "no tienes permiso para hacer eso!" << '\n';
+		char aux[255];
+		std::cin.getline(aux,255);
+		return;
+	}
 	char path[255];
 	std::cout<<"Introduce la ruta para guardar el archivo"<<std::endl;
 	std::cin.getline(path,255);
@@ -564,7 +572,12 @@ void exportBackup(Teacher & teacher){
 }
 
 void importBackup(Teacher & teacher){
-	
+	if (teacher.getRol() != "coordinador" ) {
+		std::cout << "no tienes permiso para hacer eso!" << '\n';
+		char aux[255];
+		std::cin.getline(aux,255);
+		return;
+	}
 	char path[255];
 	std::cout<<"Introduce la ruta para cargar el archivo"<<std::endl;
 	std::cin.getline(path,255);
