@@ -6,5 +6,5 @@ passwd -> secret
 
 ## Pepe
 login -> pepe  
-role -> ayudamte  
+role -> ayudante  
 passwd -> secret
